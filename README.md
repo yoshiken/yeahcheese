@@ -1,34 +1,39 @@
-# セットアップ手順
+# これなに
 
-## vagrant, virtualboxをインストール
+会社の研修課題である写真共有アプリケーション
 
-https://www.virtualbox.org/wiki/Downloads
+# TODO
 
-https://www.vagrantup.com/downloads.html
-
-## vagrant-vbguestをインストール
-
-```
-vagrant plugin install vagrant-vbguest
-```
-　
-## git clone
-
-```
-mkdir ~/sen
-cd ~/sen
-git clone git@github.com:sen-corporation/NewGrad.git
-```
-
-## 仮想環境作成
-
-```
-cd ~/sen/NewGrad
-vagrant up
-```
-
-## 動作確認
-
-http://10.81.22.67/phpinfo.php
-にアクセス
+- [ ] 仕様の確認
+  - [ ] フローチャート図を作る -> working/flowchart.jpg
+- [ ] DB設計
+  - [ ] 必要カラム洗い出し
+  - [ ] 正規化
+  - [ ] DBCreat
+  - [ ] ダミーユーザー情報入力
+- [ ] 会員登録画面
+  - [ ] フォーム
+  - [ ] 会員登録完了(DBにINSERT)
+  - [ ] 登録失敗・バリデーション処理
+- [ ] 写真家(共有者)画面
+  - [ ] ログイン画面
+    - [ ] フォーム
+    - [ ] ログイン成功(DB連携)
+    - [ ] ログイン失敗・バリデーション処理
+  - [ ] マイページ
+  - [ ] イベント作成画面
+    - [ ] フォーム
+    - [ ] 画像データ追加
+  - [ ] イベント作成プレビュー画面
+    - [ ] イベント作成画面からの情報表示
+    - [ ] 作成・編集フォーム
+      - [ ] 作成と同時に認証キー生成
+  - [ ] イベント画面
+    - [ ] イベント情報表示
+    - [ ] 編集・プレビューフォーム
+  - [ ] イベント一覧
+    - [ ] イベント情報表示
+- [ ] イベント観閲
+  - [ ] 認証キー入力フォーム
+  - [ ] イベント情報表示
 
