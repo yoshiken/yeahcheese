@@ -21,7 +21,7 @@ CREAT TBALE photographer_info(
 
 ## イベント情報[event_info]
 
-|pevent_id "SERIAL NOT NULL PRIMARY KEY"|event_name "TEXT NOT NULL "|event_key "TEXT NOT NULL"|event_start_day "TIMESTAMP NOT NULL"|event_end_day "TIMESTAMP NOT NULL"|
+|event_id "SERIAL NOT NULL PRIMARY KEY"|event_name "TEXT NOT NULL "|event_key "TEXT NOT NULL"|event_start_day "TIMESTAMP NOT NULL"|event_end_day "TIMESTAMP NOT NULL"|
 |:-- |:-- |:-- |:-- |:-- |
 |1|event1|12346|2018-01-01 00:00:00|2028-01-01 00:00:00|
 |3|event3|11111|2018-01-01 00:00:00|2028-01-01 00:00:00|
@@ -31,7 +31,7 @@ CREAT TBALE photographer_info(
 
 ```
 CREAT TBALE event_info(
-  pevent_id SERIAL PRIMARY KEY NOT NULL ,
+  event_id SERIAL PRIMARY KEY NOT NULL ,
   event_key TEXT NOT NULL,
   event_start_day TIMESTAMP NOT NULL,
   event_end_day TIMESTAMP NOT NULL
