@@ -2,7 +2,7 @@
   <table border="0">
     <tr>
       <td>メールアドレス</td>
-      <td><input type="text" name="mailaddress" value=""></td>
+      <td><input type="email" name="mailaddress" value=""></td>
     </tr>
     <tr>
       <td>パスワード</td>
