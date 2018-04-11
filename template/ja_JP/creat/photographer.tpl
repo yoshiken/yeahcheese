@@ -15,7 +15,7 @@
     </tr>
   </table>
   <p>
-  <input type="submit" name="action_creat_photographer_do" value="ログイン" id="creat_photographer_submit">
+  <input type="submit" name="action_creat_photographer_do" value="送信" id="creat_photographer_submit">
   </p>
 </form>
 <script src="/js/creat/form.js"></script>
