@@ -18,7 +18,7 @@ class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
-    public function perform()
+    public function prepare()
     {
         if ($this->af->validate() > 0) {
               return 'creat_photographer';

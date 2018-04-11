@@ -1,7 +1,7 @@
 <?php
 class Yeahcheese_Action_CreatPhotographer extends Yeahcheese_ActionClass
 {
-    public function perform()
+    public function prepare()
     {
         return 'creat_photographer';
     }
