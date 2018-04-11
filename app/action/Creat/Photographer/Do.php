@@ -1,7 +1,7 @@
 <?php
-  class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
-  {
-      public $form = array(
+class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
+{
+    public $form = array(
     'mailaddress' => [
       'name'          => 'メールアドレス',
       'required'      => true,
@@ -13,14 +13,14 @@
       'required'      => true,
       'type'          => VAR_TYPE_STRING,
       ],
-  );
+    );
 
-      public function perform()
-      {
-          if ($this->af->validate() > 0) {
+    public function prepare()
+    {
+        if ($this->af->validate() > 0) {
               return 'creat_photographer';
-          } else {
+        } else {
               return 'creat_photographer_success';
-          }
-      }
-  }
+        }
+    }
+}
