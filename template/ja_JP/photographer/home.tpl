@@ -1,3 +1,7 @@
-  <h2>New Template</h2>
-  <p>hello, world!</p>
+  <h2>You Page</h2>
 
+<p><a href="/?action_event_create=true">イベント作成</a></p>
+
+<p><a href="/?action_event_list=true">イベント一覧</a></p>
+
+<p><a href="/">ログアウト</a></p>
