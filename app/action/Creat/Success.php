@@ -5,5 +5,4 @@ class Yeahcheese_Action_CreatPhotographerSuccess extends Yeahcheese_ActionClass
     {
         return 'creat_photographer_success';
     }
-
 }
