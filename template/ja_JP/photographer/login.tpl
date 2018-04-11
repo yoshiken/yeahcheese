@@ -13,3 +13,4 @@
   <input type="submit" name="action_login_photographer_do" value="ログイン" id="login_photographer_submit">
   </p>
 </form>
+<script src="/js/photographer/form.js"></script>
