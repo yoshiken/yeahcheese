@@ -2,7 +2,7 @@
   <table border="0">
     <tr>
       <td>メールアドレス</td>
-      <td><input type="email" name="mailaddress" value=""></td>
+      <td><input type="email" name="mailaddress" value="" id="email"></td>
     </tr>
     <tr>
       <td>パスワード</td>
@@ -10,7 +10,7 @@
     </tr>
   </table>
   <p>
-  <input type="submit" name="action_login_photographer_do" value="ログイン" id="login_photographer_submit">
+  <input type="submit" name="action_photographer_login_do" value="ログイン" id="login_photographer_submit">
   </p>
 </form>
 <script src="/js/photographer/form.js"></script>
