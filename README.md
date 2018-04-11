@@ -1,34 +1,17 @@
-# セットアップ手順
+# yeahcheese
 
-## vagrant, virtualboxをインストール
+## これなに
 
-https://www.virtualbox.org/wiki/Downloads
+会社の研修課題である写真共有アプリケーション
 
-https://www.vagrantup.com/downloads.html
+## TODO
 
-## vagrant-vbguestをインストール
+各Issuesに集約
 
-```
-vagrant plugin install vagrant-vbguest
-```
-　
-## git clone
+## システムというか仕様というか
+working/以下にシステムデザインの作業ファイルを置いてあります
+設計や新たにアクションを追加したりした場合は`system-design`リポジトリでコミットします。
 
-```
-mkdir ~/sen
-cd ~/sen
-git clone git@github.com:sen-corporation/NewGrad.git
-```
-
-## 仮想環境作成
-
-```
-cd ~/sen/NewGrad
-vagrant up
-```
-
-## 動作確認
-
-http://10.81.22.67/phpinfo.php
-にアクセス
+## PR
+基本的にIssuesに紐付けるようにします
 
