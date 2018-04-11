@@ -21,6 +21,8 @@ class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
     public function prepare()
     {
         if ($this->af->validate() > 0) {
+            return 'photographer_login';
+        } else {
             return 'photographer_home';
         }
     }
