@@ -24,6 +24,10 @@ class Yeahcheese_ActionForm extends Ethna_ActionForm
     /** @var    array   form definition (default) */
     public $form_template = array();
 
+    const MAX_PASSWORD_LENGTH = 16;
+    const MIN_PASSWORD_LENGTH = 8;
+    const MAX_MAILADDRESS_LENGTH = 256;
+
     /**#@-*/
 
     /**
@@ -62,4 +66,3 @@ class Yeahcheese_ActionForm extends Ethna_ActionForm
 
 }
 // }}}
-
