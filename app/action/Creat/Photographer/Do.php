@@ -17,7 +17,8 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 
     public function prepare()
     {
-        if ($this->af->validate() > 0) {
+        $passowrd_compare = $this->af->get('password') == $this->af->get('password_confirm') ? true : false;
+        if ($this->af->validate() > 0 && $passowrd_compare) {
               return 'creat_photographer';
         } else {
               return 'creat_photographer_success';
