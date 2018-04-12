@@ -7,11 +7,11 @@
     </tr>
     <tr>
       <td>パスワード</td>
-      <td><input type="password" name="password" value="" id="password" required></td>
+      <td><input type="password" name="password" value="" required></td>
     </tr>
     <tr>
       <td>パスワード(確認用)</td>
-      <td><input type="password" name="password_confirm" value="" id="password_confirm" required></td>
+      <td><input type="password" name="password_confirm" value="" required></td>
     </tr>
   </table>
   <p>
