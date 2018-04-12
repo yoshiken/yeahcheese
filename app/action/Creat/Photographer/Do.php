@@ -5,7 +5,7 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
     'mailaddress' => [
       'name'          => 'メールアドレス',
       'required'      => true,
-      'custom' => 'checkMailaddress',
+      'custom'        => 'checkMailaddress',
       'type'          => VAR_TYPE_STRING,
       ],
     'password' => [
