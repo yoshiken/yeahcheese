@@ -2,21 +2,21 @@
 class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
 {
     public $form = [
-      'mailaddress' => [
-        'name'          => 'メールアドレス',
-        'required'      => true,
-        'custom'        => 'checkMailaddress',
-        'type'          => VAR_TYPE_STRING,
+        'mailaddress' => [
+            'name'          => 'メールアドレス',
+            'required'      => true,
+            'custom'        => 'checkMailaddress',
+            'type'          => VAR_TYPE_STRING,
         ],
         'password' => [
-          'name'          => 'パスワード',
-          'required'      => true,
-          'type'          => VAR_TYPE_STRING,
+            'name'          => 'パスワード',
+            'required'      => true,
+            'type'          => VAR_TYPE_STRING,
         ],
         'password_confirm' => [
-          'name'          => 'パスワード確認用',
-          'required'      => true,
-          'type'          => VAR_TYPE_STRING,
+            'name'          => 'パスワード確認用',
+            'required'      => true,
+            'type'          => VAR_TYPE_STRING,
         ],
     ];
 }
