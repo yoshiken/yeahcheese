@@ -1,6 +1,7 @@
-<form action="." method="post">
+<form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <tr>
+      <input type="hidden" name="MAX_FILE_SIZE" value="50000" />
       <td>イベント名</td>
       <td><input type="text" name="event_name" value="" required></td>
     </tr>
