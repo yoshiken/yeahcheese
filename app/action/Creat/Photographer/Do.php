@@ -33,7 +33,11 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0 || $this->af->get('password') !== $this->af->get('password_confirm')) {
               return 'creat_photographer';
         } else {
-              return 'creat_photographer_success';
+            $record["photographer_mailaddress"] = $this->af->get('mailaddress');
+            $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
+            $db = $this->backend->getDB();
+            $insertSQL = $db->AutoExecute($rs, $record, 'INSERT');
+            return 'creat_photographer_success';
         }
     }
 }
