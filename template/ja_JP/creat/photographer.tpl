@@ -1,4 +1,3 @@
-
 <form action="." method="post">
   <table border="0">
     <tr>
