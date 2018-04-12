@@ -3,15 +3,15 @@
   <table border="0">
     <tr>
       <td>メールアドレス</td>
-      <td><input type="email" name="mailaddress" value=""></td>
+      <td><input type="email" name="mailaddress" value="" required></td>
     </tr>
     <tr>
       <td>パスワード</td>
-      <td><input type="password" name="password" value="" id="password"></td>
+      <td><input type="password" name="password" value="" required></td>
     </tr>
     <tr>
       <td>パスワード(確認用)</td>
-      <td><input type="password" name="password_confirm" value="" id="password_confirm"></td>
+      <td><input type="password" name="password_confirm" value="" required></td>
     </tr>
   </table>
   <p>
