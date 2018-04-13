@@ -46,7 +46,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      * @param string $password
      * @return mixed 正常時:null、異常時：Ethna_Error
      */
-    public function doLogin($mailaddress, $password)
+    public function doLogin(string $mailaddress, string $password)
     {
         $db = $this->backend->getDB();
         $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = '$mailaddress' AND photographer_pw = '$password'");
@@ -61,7 +61,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      * @param string $mailaddress
      * @return array = array('id' => integer );
      */
-    public function getID($mailaddress)
+    public function getID(string $mailaddress)
     {
         $db = $this->backend->getDB();
         $dbresult = $db->query("SELECT photographer_id FROM photographer_info WHERE photographer_mailaddress = '$mailaddress'");
