@@ -53,6 +53,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
         if (!$dbresult->fetchRow()) {
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
+        return null;
     }
     /**
      * メールアドレスからID取得
