@@ -26,6 +26,8 @@ class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
     ];
 }
 
+require_once 'CreatUserManager.php';
+
 class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
     public function prepare()
