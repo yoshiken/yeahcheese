@@ -34,7 +34,7 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
     public function prepare()
     {
-        if ($this->af->validate()>0) {
+        if ($this->af->validate() > 0) {
             return 'creat_photographer';
         }
         $cu = $this->backend->getManager('user');
