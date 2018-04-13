@@ -28,10 +28,10 @@ class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
-    public function perform()
+    public function prepare()
     {
         if ($this->af->validate() > 0 || $this->af->get('password') !== $this->af->get('password_confirm')) {
-              return 'creat_photographer';
+            return 'creat_photographer';
         } else {
             $db = $this->backend->getDB();
             $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = $1", $this->af->get('mailaddress'));
@@ -42,7 +42,11 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
             $record["photographer_mailaddress"] = $this->af->get('mailaddress');
             $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
             $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
-            return 'creat_photographer_success';
         }
+        return null;
+    }
+    public function perform()
+    {
+        return 'creat_photographer_success';
     }
 }
