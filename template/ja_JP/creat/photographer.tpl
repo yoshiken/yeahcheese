@@ -3,7 +3,7 @@
   <table border="0">
     <tr>
       <td>メールアドレス</td>
-      <td><input type="email" name="mailaddress" value="" required>{message name="mailaddress"}</td>
+      <td><input type="email" name="mailaddress" value="{$form.mailaddress}" required>{message name="mailaddress"}</td>
     </tr>
     <tr>
       <td>パスワード</td>
