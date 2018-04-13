@@ -1,5 +1,5 @@
 
-<form action="." method="post" id="form_creat_photographer">
+<form action="." method="post">
   <table border="0">
     <tr>
       <td>メールアドレス</td>
@@ -15,7 +15,6 @@
     </tr>
   </table>
   <p>
-  <input type="submit" name="action_creat_photographer_do" value="送信" id="creat_photographer_submit">
+  <input type="submit" name="action_creat_photographer_do" value="送信">
   </p>
 </form>
-<script src="/js/creat/form.js"></script>
