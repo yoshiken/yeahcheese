@@ -14,7 +14,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
    * @param string $password_confirm
    * @return mixed 正常時:null、異常時：Ethna_Error
    */
-    public function comparisonPassword($password, $password_confirm)
+    public function comparisonPassword(string $password, string $password_confirm)
     {
         if ($password !== $password_confirm) {
             return Ethna::raiseNotice('パスワードが一致しません', E_PASSWORD_COMPARISON);
@@ -27,7 +27,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      * @param string $mailaddress
      * @return mixed 正常時:null、異常時：Ethna_Error
      */
-    public function isRegisteredMailaddress($mailaddress)
+    public function isRegisteredMailaddress(string $mailaddress)
     {
         $db = $this->backend->getDB();
         $sql = "
