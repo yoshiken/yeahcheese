@@ -1,6 +1,7 @@
 <form action="." method="post">
   <table border="0">
     <tr>
+        {message name="login_error"}
       <td>メールアドレス</td>
       <td><input type="email" name="mailaddress" value=""　required></td>
     </tr>

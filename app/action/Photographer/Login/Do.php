@@ -6,7 +6,7 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
     'mailaddress' => [
       'name'          => 'メールアドレス',
       'required'      => true,
-      'custom' => 'checkMailaddress',
+      'custom'        => 'checkMailaddress',
       'type'          => VAR_TYPE_STRING,
       ],
     'password' => [
@@ -18,12 +18,22 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 }
 class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
 {
-    public function perform()
+    public function prepare()
     {
         if ($this->af->validate() > 0) {
             return 'photographer_login';
-        } else {
-            return 'photographer_home';
         }
+        $db = $this->backend->getDB();
+        $cu = new Yeahcheese_UserManager();
+        $userlogin = $cu->doLogin($this->af->get('mailaddress'), hash('sha256', $this->af->get('password')), $db);
+        if (Ethna::isError($userlogin)) {
+            $this->ae->addObject('login_error', $userlogin);
+            return 'photographer_login';
+        }
+        return null;
+    }
+    public function perform()
+    {
+        return 'photographer_home';
     }
 }
