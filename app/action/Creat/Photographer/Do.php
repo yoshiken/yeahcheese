@@ -26,8 +26,6 @@ class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
     ];
 }
 
-require_once 'CreatUserManager.php';
-
 class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
     public function prepare()
@@ -36,8 +34,7 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
             return 'creat_photographer';
         }
 
-        $cu = new CreatUserManager();
-
+        $cu = new Yeahcheese_UserManager();
         $comparisonpassword = $cu->comparisonPassword($this->af->get('password'), $this->af->get('password_confirm'));
         if (Ethna::isError($comparisonpassword)) {
             $this->ae->addObject('password_confirm', $comparisonpassword);
