@@ -54,6 +54,7 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 
     public function perform()
     {
+        $db = $this->backend->getDB();
         $table = 'photographer_info';
         $record["photographer_mailaddress"] = $this->af->get('mailaddress');
         $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
