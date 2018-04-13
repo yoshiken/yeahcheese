@@ -23,6 +23,7 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_FILE,
         'file_size_max' => '5000KB',
+        'file_name' => '/.*.jp.*g/',
         ],
     );
 }
