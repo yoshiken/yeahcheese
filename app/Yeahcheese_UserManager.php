@@ -40,16 +40,18 @@ class Yeahcheese_UserManager extends Ethna_AppManager
         return null;
     }
 
-    public function doLogin($mailaddress, $password, $db)
+    public function doLogin($mailaddress, $password)
     {
+        $db = $this->backend->getDB();
         $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = '$mailaddress' AND photographer_pw = '$password'");
         if (!$dbresult->fetchRow()) {
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
     }
 
-    public function getID($mailaddress, $db)
+    public function getID($mailaddress)
     {
+        $db = $this->backend->getDB();
         $dbresult = $db->query("SELECT photographer_id FROM photographer_info WHERE photographer_mailaddress = '$mailaddress'");
         return $dbresult->fetchRow();
     }
