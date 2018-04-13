@@ -33,16 +33,14 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
         if ($this->af->validate()>0) {
             return 'creat_photographer';
         }
-
-        $cu = new Yeahcheese_UserManager();
+        $cu = $this->backend->getManager('user');
         $comparisonpassword = $cu->comparisonPassword($this->af->get('password'), $this->af->get('password_confirm'));
         if (Ethna::isError($comparisonpassword)) {
             $this->ae->addObject('password_confirm', $comparisonpassword);
             return 'creat_photographer';
         }
 
-        $db = $this->backend->getDB();
-        $registeredmailaddress = $cu->isRegisteredMailaddress($this->af->get('mailaddress'), $db);
+        $registeredmailaddress = $cu->isRegisteredMailaddress($this->af->get('mailaddress'));
         if (Ethna::isError($registeredmailaddress)) {
             $this->ae->addObject('mailaddress', $registeredmailaddress);
             return 'creat_photographer';
