@@ -47,4 +47,10 @@ class Yeahcheese_UserManager extends Ethna_AppManager
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_MAILADDRESS_REGISTERED);
         }
     }
+
+    public function getID($mailaddress, $db)
+    {
+        $dbresult = $db->query("SELECT photographer_id FROM photographer_info WHERE photographer_mailaddress = '$mailaddress'");
+        return $dbresult->fetchRow();
+    }
 }

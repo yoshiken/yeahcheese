@@ -34,6 +34,14 @@ class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
     }
     public function perform()
     {
+        $cu = new Yeahcheese_UserManager();
+        $db = $this->backend->getDB();
+        $userid = $cu->getID($this->af->get('mailaddress'), $db);
+        $this->session->start();
+        $sessionUserId = [
+            'id' =>  $userid["photographer_id"]
+        ];
+        $this->session->set('userid', $sessionUserId);
         return 'photographer_home';
     }
 }
