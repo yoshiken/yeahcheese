@@ -39,7 +39,13 @@ class Yeahcheese_UserManager extends Ethna_AppManager
         }
         return null;
     }
-
+    /**
+     * ログインチェック
+     *
+     * @param string $mailaddres
+     * @param string $password
+     * @return mixed 正常時:null、異常時：Ethna_Error
+     */
     public function doLogin($mailaddress, $password)
     {
         $db = $this->backend->getDB();
@@ -48,7 +54,12 @@ class Yeahcheese_UserManager extends Ethna_AppManager
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
     }
-
+    /**
+     * メールアドレスからID取得
+     *
+     * @param string $mailaddress
+     * @return array = array('id' => integer );
+     */
     public function getID($mailaddress)
     {
         $db = $this->backend->getDB();

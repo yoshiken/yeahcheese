@@ -1,5 +1,8 @@
 <?php
-
+/**
+ *  Photographer/Login/Do.php
+ *  Action ログイン実行処理
+ */
 class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 {
     public $form = array(
