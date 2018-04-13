@@ -16,3 +16,5 @@
  *  Example:
  *  define('E_LOGIN_INVALID', 256);
  */
+define('E_PASSWORD_COMPARISON', 300);
+define('E_MAILADDRESS_REGISTERED', 301);

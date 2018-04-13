@@ -34,21 +34,29 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
     {
         if ($this->af->validate()>0) {
             return 'creat_photographer';
-        } elseif ($this->af->get('password') !== $this->af->get('password_confirm')) {
+        }
+
+        $cu = new CreatUserManager();
+
+        $comparisonpassword = $cu->comparisonPassword($this->af->get('password'), $this->af->get('password_confirm'));
+        if (Ethna::isError($comparisonpassword)) {
+            $this->ae->addObject('password_confirm', $comparisonpassword);
             return 'creat_photographer';
-        } else {
-            $db = $this->backend->getDB();
-            $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = $1", $this->af->get('mailaddress'));
-            if ($dbresult->fetchRow()) {
-                return 'creat_photographer';
-            }
+        }
+
+        $db = $this->backend->getDB();
+        $registeredmailaddress = $cu->isRegisteredMailaddress($this->af->get('mailaddress'), $db);
+        if (Ethna::isError($registeredmailaddress)) {
+            $this->ae->addObject('mailaddress', $registeredmailaddress);
+            return 'creat_photographer';
+        }
             $table = 'photographer_info';
             $record["photographer_mailaddress"] = $this->af->get('mailaddress');
             $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
             $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
-        }
         return null;
     }
+
     public function perform()
     {
         return 'creat_photographer_success';
