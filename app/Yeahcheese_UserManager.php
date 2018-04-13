@@ -1,6 +1,19 @@
 <?php
+/**
+ *  Yeahcheese_UserManager
+ *
+ *  ユーザー情報に関する処理
+ *
+ */
 class Yeahcheese_UserManager extends Ethna_AppManager
 {
+  /**
+   * パスワード比較処理
+   *
+   * @param string $password
+   * @param string $password_confirm
+   * @return mixed 正常時:null、異常時：Ethna_Error
+   */
     public function comparisonPassword($password, $password_confirm)
     {
         if ($password !== $password_confirm) {
@@ -8,7 +21,12 @@ class Yeahcheese_UserManager extends Ethna_AppManager
         }
         return null;
     }
-
+    /**
+     * 既存のメールアドレスを検索
+     *
+     * @param string $mailaddress
+     * @return mixed 正常時:null、異常時：Ethna_Error
+     */
     public function isRegisteredMailaddress($mailaddress)
     {
         $db = $this->backend->getDB();

@@ -1,4 +1,8 @@
 <?php
+/**
+ *  Creat/Photographer/Do.php
+ *  Action 新規登録処理
+ */
 class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
 {
     public $form = [
