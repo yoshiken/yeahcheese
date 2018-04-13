@@ -44,7 +44,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
     {
         $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = '$mailaddress' AND photographer_pw = '$password'");
         if (!$dbresult->fetchRow()) {
-            return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_MAILADDRESS_REGISTERED);
+            return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
     }
 
