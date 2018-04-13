@@ -42,14 +42,20 @@ class Yeahcheese_UserManager extends Ethna_AppManager
     /**
      * ログインチェック
      *
-     * @param string $mailaddres
+     * @param string $mailaddress
      * @param string $password
      * @return mixed 正常時:null、異常時：Ethna_Error
      */
     public function doLogin(string $mailaddress, string $password)
     {
         $db = $this->backend->getDB();
-        $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = '$mailaddress' AND photographer_pw = '$password'");
+        $sql = "
+            SELECT *
+              FROM photographer_info
+             WHERE photographer_mailaddress = ?
+               AND photographer_pw = ?
+        ";
+        $dbresult = $db->query($sql, [$mailaddress, $password]);
         if (!$dbresult->fetchRow()) {
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
@@ -64,7 +70,12 @@ class Yeahcheese_UserManager extends Ethna_AppManager
     public function getID(string $mailaddress)
     {
         $db = $this->backend->getDB();
-        $dbresult = $db->query("SELECT photographer_id FROM photographer_info WHERE photographer_mailaddress = '$mailaddress'");
+        $sql = "
+            SELECT photographer_id
+              FROM photographer_info
+             WHERE photographer_mailaddress = ?
+        ";
+        $dbresult = $db->query($sql,$mailaddress);
         return $dbresult->fetchRow();
     }
 }
