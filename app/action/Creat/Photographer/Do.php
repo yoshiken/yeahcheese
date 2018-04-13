@@ -50,15 +50,15 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
             $this->ae->addObject('mailaddress', $registeredmailaddress);
             return 'creat_photographer';
         }
-            $table = 'photographer_info';
-            $record["photographer_mailaddress"] = $this->af->get('mailaddress');
-            $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
-            $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
         return null;
     }
 
     public function perform()
     {
+        $table = 'photographer_info';
+        $record["photographer_mailaddress"] = $this->af->get('mailaddress');
+        $record["photographer_pw"] = hash('sha256', $this->af->get('password'));
+        $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
         return 'creat_photographer_success';
     }
 }
