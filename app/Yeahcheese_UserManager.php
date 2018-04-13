@@ -12,8 +12,12 @@ class Yeahcheese_UserManager extends Ethna_AppManager
     public function isRegisteredMailaddress($mailaddress)
     {
         $db = $this->backend->getDB();
-        $dbresult = $db->query("SELECT * FROM photographer_info WHERE photographer_mailaddress = $1", $mailaddress);
-        if ($dbresult->fetchRow()) {
+        $sql = "
+            SELECT *
+              FROM photographer_info
+             WHERE photographer_mailaddress = ?
+        ";
+        if ($this->db->getRow($sql, $mailaddress)) {
             return Ethna::raiseNotice('このメールアドレスは既に登録されています', E_MAILADDRESS_REGISTERED);
         }
         return null;
