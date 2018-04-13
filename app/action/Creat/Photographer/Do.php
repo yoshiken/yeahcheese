@@ -30,7 +30,9 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
     public function prepare()
     {
-        if ($this->af->validate() > 0 || $this->af->get('password') !== $this->af->get('password_confirm')) {
+        if ($this->af->validate()>0) {
+            return 'creat_photographer';
+        } elseif ($this->af->get('password') !== $this->af->get('password_confirm')) {
             return 'creat_photographer';
         } else {
             $db = $this->backend->getDB();
