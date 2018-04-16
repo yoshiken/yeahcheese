@@ -20,6 +20,6 @@
   </table>
   <p>
   <input type="submit" name="action_event_create" value="編集">
-  <input type="submit" name="action_event_do" value="作成">
+  <input type="submit" name="action_event_create_do" value="作成">
   </p>
 </form>
