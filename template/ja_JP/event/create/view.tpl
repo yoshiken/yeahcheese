@@ -3,15 +3,19 @@
   <table border="0">
     <tr>
       <td>イベント名</td>
-      <td><input type="text" name="event_name" value="{$form.event_name}" disabled="disabled" required></td>
+      <td><input type="text" name="event_name" value="{$form.event_name}" readonly required></td>
     </tr>
     <tr>
       <td>公開開始日</td>
-      <td><input type="datetime" name="event_start_day" value="{$event_start_day}" disabled="disabled" required></td>
+      <td><input type="date" name="event_start_day" value="{$form.event_start_day}" readonly required></td>
     </tr>
     <tr>
       <td>公開終了日</td>
-      <td><input type="datetime" name="event_end_day" value="{$form.event_end_day}" disabled="disabled" required></td>
+      <td><input type="date" name="event_end_day" value="{$form.event_end_day}" readonly required></td>
+    </tr>
+    <tr>
+      <td>写真</td>
+      <td><input type="file" name="event_photo" value="{$form.event_end_day}"></td>
     </tr>
   </table>
   <p>
