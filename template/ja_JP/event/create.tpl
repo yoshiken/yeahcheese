@@ -7,11 +7,11 @@
     </tr>
     <tr>
       <td>公開開始日</td>
-      <td><input type="datetime" name="event_start_day" value="" required></td>
+      <td><input type="date" name="event_start_day" value="" required></td>
     </tr>
     <tr>
       <td>公開終了日</td>
-      <td><input type="datetime" name="event_end_day" value="" required></td>
+      <td><input type="date" name="event_end_day" value="" required></td>
     </tr>
     <tr>
       <td>写真</td>
