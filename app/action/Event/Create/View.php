@@ -37,7 +37,11 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
+            $uploaddir = './uploads/';
+            $uploadfile = $uploaddir . basename($_FILES['event_photo']['name']);
+            move_uploaded_file($_FILES['event_photo']['tmp_name'], $uploadfile);
             $this->af->setApp('photo_name', $this->af->get('event_photo')['name']);
+            $this->af->setApp('photo_date', $uploadfile);
             return 'event_create_view';
         }
     }

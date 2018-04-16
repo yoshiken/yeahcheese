@@ -1,5 +1,5 @@
 <h2>event_create_view</h2>
-<form action="." method="post">
+<form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <tr>
       <td>イベント名</td>
@@ -15,11 +15,13 @@
     </tr>
     <tr>
       <td>写真</td>
-      <td>{$app.photo_name}</td>
     </tr>
   </table>
+{$app.photo_name}
+<img src={$app.photo_date} width="300" height="300" alt={$app.photo_tmp_name}>
+<input type="hidden" name="event_photo_tmp_name" value="{$app.photo_date}">
   <p>
   <input type="submit" name="action_event_create" value="編集">
-  <input type="submit" name="action_event_create_do" value="作成">
+  <input type="submit" name="action_event_info" value="作成">
   </p>
 </form>
