@@ -1,3 +1,4 @@
+<h2>event_create_view</h2>
 <form action="." method="post">
   <table border="0">
     <tr>

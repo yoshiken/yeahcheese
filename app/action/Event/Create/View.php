@@ -37,7 +37,7 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
-            return 'event_create_view'
+            return 'event_create_view';
         }
     }
 }
