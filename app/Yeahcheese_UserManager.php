@@ -29,7 +29,6 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      */
     public function isRegisteredMailaddress(string $mailaddress):?\Ethna_Error
     {
-        $db = $this->backend->getDB();
         $sql = "
             SELECT *
               FROM photographer_info
