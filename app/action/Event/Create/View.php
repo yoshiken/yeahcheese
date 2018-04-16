@@ -1,4 +1,8 @@
 <?php
+/**
+ *  Event/Create/View.php
+ *  Action イベント画面のプレビュー画面
+ */
 class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
 {
     public $form = array(
