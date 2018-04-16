@@ -1,8 +1,7 @@
 <?php
 /**
  *  Event/Create/do.php
- *  Action イベント作成画面から各種バリデーション・エラーチェックをして
- *  プレビュー画面に遷移する
+ *  Action イベント作成画面から各種バリデーション・エラーチェック
  */
 class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
 {
