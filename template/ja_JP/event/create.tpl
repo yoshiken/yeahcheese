@@ -1,3 +1,5 @@
+<h2>event_create<h2>
+
 <form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <tr>
@@ -19,6 +21,6 @@
     </tr>
   </table>
   <p>
-  <input type="submit" name="action_event_View" value="プレビュー">
+  <input type="submit" name="action_event_create_view" value="プレビュー">
   </p>
 </form>
