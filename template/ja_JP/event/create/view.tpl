@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td>写真</td>
-      <td><input type="file" name="event_photo" value="{$form.event_end_day}"></td>
+      <td>{$app.photo_name}</td>
     </tr>
   </table>
   <p>
