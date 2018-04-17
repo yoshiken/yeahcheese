@@ -42,10 +42,10 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
     }
     public function prepare()
     {
-        $eventkey = $this->createEventkey()."/";
+        $eventkey = $this->createEventkey();
 
         //eventごとのDirectory作成
-        $uploaddir = 'uploads/'. $eventkry ."/";
+        $uploaddir = 'uploads/'. $eventkey ."/";
         mkdir($uploaddir, 755);
 
         //uploads/tmpファイルからeventごとのフォルダに移動
@@ -63,9 +63,10 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         $record['event_key'] = $eventkey;
         $record['event_start_day'] = $this->af->get('event_start_day');
         $record['event_end_day'] = $this->af->get('event_end_day');
+        $record['photographer_id'] = $this->session->get('userid');
 
         $ev = $this->backend->getManager('event');
-        $insertevent = $ev->eventsCreate($record)
+        $insertevent = $ev->eventsCreate($record);
         if (Ethna::isError($insertevent)) {
             $this->ae->addObject('dberror', $insertevent);
             return 'event_create';
@@ -74,7 +75,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
-            return 'event_create_info';
+            return 'event_info';
         }
     }
 }
