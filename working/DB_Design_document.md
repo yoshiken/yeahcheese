@@ -1,5 +1,13 @@
 ## 写真家情報[photographer_info]
 
+### ユーザー作成
+
+CREATE ROLE role_name WITH LOGIN PASSWORD 'password'
+
+### DB作成
+
+CREATE DATABASE database_name OWNER dbowner_name;
+
 ### 設計図
 
 |photographer_id "SERIAL NOT NULL PRIMARY KEY"|photographer_mailaddress "TEXT UNIQUE NOT NULL"|photographer_pw "VARCHAR(64) NOT NULL"|
@@ -11,7 +19,7 @@
 ### CERAT文
 
 ```
-CREAT TBALE photographer_info(
+CREATE TABLE photographer_info(
   photographer_id SERIAL NOT NULL PRIMARY KEY,
   photographer_mailaddress TEXT UNIQUE NOT NULL,
   photographer_pw VARCHAR(64) NOT NULL
@@ -30,10 +38,12 @@ CREAT TBALE photographer_info(
 ### CERAT文
 
 ```
-CREAT TBALE event_info(
+CREATE TABLE event_info(
   event_id SERIAL PRIMARY KEY NOT NULL ,
-  event_key TEXT NOT NULL,
-  event_start_day TIMESTAMP NOT NULL,
-  event_end_day TIMESTAMP NOT NULL
+  event_name TEXT NOT NULL,
+  event_key char(16) UNIQUE NOT NULL,
+  event_start_day DATE NOT NULL,
+  event_end_day DATE NOT NULL,
+  photographer_id INTEGER  NOT NULL
   );
 ```
