@@ -67,7 +67,6 @@ class Yeahcheese_UserManager extends Ethna_AppManager
               FROM photographer_info
              WHERE photographer_mailaddress = ?
         ";
-        $dbresult = $this->db->getRow($sql, $mailaddress);
-        return $dbresult;
+        return $this->db->getRow($sql, $mailaddress);
     }
 }
