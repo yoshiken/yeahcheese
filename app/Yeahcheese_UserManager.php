@@ -48,15 +48,13 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      */
     public function doLogin(string $mailaddress, string $password): ?\Ethna_Error
     {
-        $db = $this->backend->getDB();
         $sql = "
             SELECT *
               FROM photographer_info
              WHERE photographer_mailaddress = ?
                AND photographer_pw = ?
         ";
-        $dbresult = $db->query($sql, [$mailaddress, $password]);
-        if (!$dbresult->fetchRow()) {
+        if (!($this->db->getRow($sql, [$mailaddress, $password]))) {
             return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
         }
         return null;
