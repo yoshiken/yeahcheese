@@ -32,7 +32,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
               FROM photographer_info
              WHERE photographer_mailaddress = ?
         ";
-        return ($this->db->getRow($sql, $mailaddress)
+        return ($this->db->getRow($sql, $mailaddress))
         ? null : Ethna::raiseNotice('このメールアドレスは既に登録されています', E_MAILADDRESS_REGISTERED);
     }
     /**
