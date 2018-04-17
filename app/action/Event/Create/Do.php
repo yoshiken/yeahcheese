@@ -21,12 +21,11 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-      'event_photo_tmp_name' => [
+      'photo_tmp_path' => [
+        'name'          => 'tmppath',
         'required'      => true,
-        'type'          => VAR_TYPE_STRING,
-        'file_size_max' => '5000KB',
+        'type'          => array(VAR_TYPE_STRING),
         ],
-
     );
 }
 
@@ -43,9 +42,15 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
     }
     public function prepare()
     {
-        $uploaddir = 'uploads/'.$this->createEventkey();
-        $uploadfile = $uploaddir . basename($this->af->get('event_photo_tmp_name'));
-        move_uploaded_file($_FILES['event_photo']['tmp_name'], $uploadfile);
+        //eventごとのDirectory作成
+        $uploaddir = 'uploads/'.$this->createEventkey()."/";
+        mkdir($uploaddir, 755);
+
+        //uploads/tmpファイルからeventごとのフォルダに移動
+        for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
+            $uploaddirevent = $uploaddir.basename($this->af->get('photo_tmp_path')[$i]);
+            var_dump(rename($this->af->get('photo_tmp_path')[$i], $uploaddirevent));
+        }
         return null;
     }
 
@@ -53,9 +58,9 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
     public function perform()
     {
         if ($this->af->validate() > 0) {
-            return 'event_create_view';
+            return 'event_create_do';
         } else {
-            return 'event_create_info';
+            return 'event_create_do';
         }
     }
 }
