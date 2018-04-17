@@ -40,6 +40,7 @@ CREATE TABLE photographer_info(
 ```
 CREATE TABLE event_info(
   event_id SERIAL PRIMARY KEY NOT NULL ,
+  event_name TEXT NOT NULL,
   event_key char(16) UNIQUE NOT NULL,
   event_start_day DATE NOT NULL,
   event_end_day DATE NOT NULL,
