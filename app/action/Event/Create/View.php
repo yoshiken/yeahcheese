@@ -41,9 +41,6 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
                 $uploadphoto[$i]['photoname'] = $_FILES['event_photo']['name'][$i];
                 $uploadphoto[$i]['phototmppath'] = $tmpuploaddir;
             }
-            print "<pre>";
-            var_dump($_FILES);
-            print "</pre>";
             $this->af->setApp('uploadphoto', $uploadphoto);
             return 'event_create_view';
         }
