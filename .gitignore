@@ -1,6 +1,6 @@
-/vendor/
-/.vagrant/
+vendor/
+.vagrant/
 .DS_Store
-/working/Flowchart.xml
-/etc/config.php
-/tmp/*
+working/Flowchart.xml
+etc/config.php
+tmp/*
