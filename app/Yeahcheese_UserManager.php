@@ -16,10 +16,8 @@ class Yeahcheese_UserManager extends Ethna_AppManager
    */
     public function comparisonPassword(string $password, string $password_confirm): ?\Ethna_Error
     {
-        if ($password !== $password_confirm) {
-            return Ethna::raiseNotice('パスワードが一致しません', E_PASSWORD_COMPARISON);
-        }
-        return null;
+        return ($this->db->getRow($sql, [$mailaddress, $password]))
+        ? null : Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
     }
     /**
      * 既存のメールアドレスを検索
@@ -34,10 +32,8 @@ class Yeahcheese_UserManager extends Ethna_AppManager
               FROM photographer_info
              WHERE photographer_mailaddress = ?
         ";
-        if ($this->db->getRow($sql, $mailaddress)) {
-            return Ethna::raiseNotice('このメールアドレスは既に登録されています', E_MAILADDRESS_REGISTERED);
-        }
-        return null;
+        return ($this->db->getRow($sql, $mailaddress)
+        ? null : Ethna::raiseNotice('このメールアドレスは既に登録されています', E_MAILADDRESS_REGISTERED);
     }
     /**
      * ログインチェック
@@ -54,10 +50,9 @@ class Yeahcheese_UserManager extends Ethna_AppManager
              WHERE photographer_mailaddress = ?
                AND photographer_pw = ?
         ";
-        if (!($this->db->getRow($sql, [$mailaddress, $password]))) {
-            return Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER);
-        }
-        return null;
+        return($this->db->getRow($sql, [$mailaddress, $password]))
+        ? Ethna::raiseNotice('メールアドレスまたはパスワードが違います', E_LOGIN_USER) :
+        null ;
     }
     /**
      * メールアドレスからID取得
