@@ -15,9 +15,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
    */
     public function eventsCreate(Array $record): ?\Ethna_Error
     {
-        if ($this->db->AutoExecute(event_info, $record, 'INSERT')) {
-            return Ethna::raiseNotice('データーベースエラーです', E_DB_ERROR);
-        }
+        $this->db->AutoExecute(event_info, $record, 'INSERT');
         return null;
     }
 }
