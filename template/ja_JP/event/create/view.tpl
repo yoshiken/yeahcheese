@@ -15,15 +15,17 @@
     </tr>
     <tr>
       <td>写真</td>
+
     </tr>
   </table>
 {foreach from=$app.uploadphoto item='updata'}
   <br />
       <li>{$updata.photoname} <br>
         <img src={$updata.phototmppath} width="128" height="128"></li>
+        <input type="text" name="photo_tmp_path[]" value="{$updata.phototmppath}" readonly required/>
 {/foreach}
   <p>
   <input type="submit" name="action_event_create" value="編集">
-  <input type="submit" name="action_event_info" value="作成">
+  <input type="submit" name="action_event_create_do" value="作成">
   </p>
 </form>
