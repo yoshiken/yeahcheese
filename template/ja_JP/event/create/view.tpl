@@ -17,9 +17,11 @@
       <td>写真</td>
     </tr>
   </table>
-{$app.photo_name}
-<img src={$app.photo_date} width="300" height="300" alt={$app.photo_tmp_name}>
-<input type="hidden" name="event_photo_tmp_name" value="{$app.photo_date}">
+{foreach from=$app.uploadphoto item='updata'}
+  <br />
+      <li>{$updata.photoname} <br>
+        <img src={$updata.phototmppath} width="128" height="128"></li>
+{/foreach}
   <p>
   <input type="submit" name="action_event_create" value="編集">
   <input type="submit" name="action_event_info" value="作成">
