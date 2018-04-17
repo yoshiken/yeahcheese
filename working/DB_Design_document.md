@@ -1,5 +1,13 @@
 ## 写真家情報[photographer_info]
 
+### ユーザー作成
+
+CREATE ROLE role_name WITH LOGIN PASSWORD 'password'
+
+### DB作成
+
+CREATE DATABASE database_name OWNER dbowner_name;
+
 ### 設計図
 
 |photographer_id "SERIAL NOT NULL PRIMARY KEY"|photographer_mailaddress "TEXT UNIQUE NOT NULL"|photographer_pw "VARCHAR(64) NOT NULL"|
