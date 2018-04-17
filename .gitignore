@@ -1,5 +1,6 @@
 /vendor/
-/.vagrant/machines/default/virtualbox/private_key
+/.vagrant/
 .DS_Store
 /working/Flowchart.xml
 /etc/config.php
+/tmp/*
