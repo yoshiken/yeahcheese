@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <td>写真</td>
-      <td><input type="file" name="event_photo" value="{$form.event_photo}"required>{message name="event_photo"}</td>
+      <td><input type="file" name="event_photo[]" value="{$form.event_photo}" multiple required>{message name="event_photo"}</td>
     </tr>
   </table>
   <p>

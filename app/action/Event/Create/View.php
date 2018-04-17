@@ -21,12 +21,6 @@ class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-      'event_photo' => [
-        'name'          => '写真',
-        'required'      => true,
-        'type'          => VAR_TYPE_FILE,
-        'file_size_max' => '5000KB',
-        ],
     );
 }
 
@@ -37,11 +31,18 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
-            $uploaddir = './uploads/';
-            $uploadfile = $uploaddir . basename($_FILES['event_photo']['name']);
-            move_uploaded_file($_FILES['event_photo']['tmp_name'], $uploadfile);
-            $this->af->setApp('photo_name', $this->af->get('event_photo')['name']);
-            $this->af->setApp('photo_date', $uploadfile);
+            $uploadphoto= [];
+            for ($i=0; $i < count($_FILES['event_photo']['name']); $i++) {
+                $tmpuploaddir = 'uploads/tmp/';
+                $tmpuploaddir = $tmpuploaddir. basename($_FILES['event_photo']['name'][$i]);
+                move_uploaded_file($_FILES['event_photo']['tmp_name'][$i], $tmpuploaddir);
+                $uploadphoto[$i]['photoname'] = $_FILES['event_photo']['name'][$i];
+                $uploadphoto[$i]['phototmppath'] = $tmpuploaddir;
+            }
+            print "<pre>";
+            var_dump($_FILES);
+            print "</pre>";
+            $this->af->setApp('uploadphoto', $uploadphoto);
             return 'event_create_view';
         }
     }
