@@ -5,7 +5,7 @@
  */
 class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 {
-    public $form = array(
+    public $form = [
     'mailaddress' => [
       'name'          => 'メールアドレス',
       'required'      => true,
@@ -17,7 +17,7 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
       'required'      => true,
       'type'          => VAR_TYPE_STRING,
       ],
-    );
+    ];
 }
 class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
 {
