@@ -19,6 +19,7 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
       ],
     ];
 }
+
 class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
 {
     public function authenticate()
@@ -31,22 +32,26 @@ class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'photographer_login';
         }
+
         $cu = $this->backend->getManager('user');
         $userlogin = $cu->doLogin($this->af->get('mailaddress'), hash('sha256', $this->af->get('password')));
+
         if (Ethna::isError($userlogin)) {
             $this->ae->addObject('login_error', $userlogin);
             return 'photographer_login';
         }
-        return null;
-    }
-    public function perform()
-    {
-        $cu = $this->backend->getManager('user');
+
         $userid = $cu->loadID($this->af->get('mailaddress'));
         $sessionUserId = [
             'id' =>  $userid['photographer_id']
         ];
         $this->session->set('userid', $sessionUserId);
+
+        return null;
+    }
+
+    public function perform()
+    {
         return 'photographer_home';
     }
 }
