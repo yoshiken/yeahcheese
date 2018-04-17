@@ -67,13 +67,12 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      */
     public function getID(string $mailaddress): array
     {
-        $db = $this->backend->getDB();
         $sql = "
             SELECT photographer_id
               FROM photographer_info
              WHERE photographer_mailaddress = ?
         ";
-        $dbresult = $db->query($sql,$mailaddress);
-        return $dbresult->fetchRow();
+        $dbresult = $this->db->getRow($sql, $mailaddress);
+        return $dbresult;
     }
 }
