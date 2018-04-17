@@ -42,8 +42,10 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
     }
     public function prepare()
     {
+        $eventkey = $this->createEventkey()."/";
+
         //eventごとのDirectory作成
-        $uploaddir = 'uploads/'.$this->createEventkey()."/";
+        $uploaddir = 'uploads/'. $eventkry ."/";
         mkdir($uploaddir, 755);
 
         //uploads/tmpファイルからeventごとのフォルダに移動
