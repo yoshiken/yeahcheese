@@ -59,10 +59,22 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
 
     public function perform()
     {
+        $record['event_name'] = $this->af->get('event_name');
+        $record['event_key'] = $eventkey;
+        $record['event_start_day'] = $this->af->get('event_start_day');
+        $record['event_end_day'] = $this->af->get('event_end_day');
+
+        $ev = $this->backend->getManager('event');
+        $insertevent = $ev->eventsCreate($record)
+        if (Ethna::isError($insertevent)) {
+            $this->ae->addObject('dberror', $insertevent);
+            return 'event_create';
+        }
+
         if ($this->af->validate() > 0) {
-            return 'event_create_do';
+            return 'event_create';
         } else {
-            return 'event_create_do';
+            return 'event_create_info';
         }
     }
 }
