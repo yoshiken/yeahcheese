@@ -53,12 +53,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
             $uploaddirevent = $uploaddir.basename($this->af->get('photo_tmp_path')[$i]);
             var_dump(rename($this->af->get('photo_tmp_path')[$i], $uploaddirevent));
         }
-        return null;
-    }
 
-
-    public function perform()
-    {
         $record['event_name'] = $this->af->get('event_name');
         $record['event_key'] = $eventkey;
         $record['event_start_day'] = $this->af->get('event_start_day');
@@ -71,7 +66,11 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
             $this->ae->addObject('dberror', $insertevent);
             return 'event_create';
         }
+        return null;
+    }
 
+    public function perform()
+    {
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
