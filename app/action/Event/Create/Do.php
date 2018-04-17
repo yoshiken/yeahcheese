@@ -51,7 +51,6 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         //uploads/tmpファイルからeventごとのフォルダに移動
         for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
             $uploaddirevent = $uploaddir.basename($this->af->get('photo_tmp_path')[$i]);
-            var_dump(rename($this->af->get('photo_tmp_path')[$i], $uploaddirevent));
         }
 
         $record['event_name'] = $this->af->get('event_name');
