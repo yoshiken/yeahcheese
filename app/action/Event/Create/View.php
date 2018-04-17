@@ -35,7 +35,7 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
             for ($i=0; $i < count($_FILES['event_photo']['name']); $i++) {
                 $tmpuploaddir = 'uploads/tmp/';
                 $eventphototmpname = $_FILES['event_photo']['tmp_name'][$i];
-                $eventnamehash = hash_file("sha1", $eventphototmpname).'jpg';
+                $eventnamehash = hash_file("sha1", $eventphototmpname).'.jpg';
                 $tmpuploaddir = $tmpuploaddir. $eventnamehash;
                 move_uploaded_file($_FILES['event_photo']['tmp_name'][$i], $tmpuploaddir);
                 $uploadphoto[$i]['photoname'] = $_FILES['event_photo']['name'][$i];
