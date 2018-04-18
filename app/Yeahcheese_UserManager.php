@@ -60,15 +60,15 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      * メールアドレスからID取得
      *
      * @param string $mailaddress
-     * @return array = array('id' => integer )
+     * @return mixed 正常値:string 異常時:null
      */
-    public function loadID(string $mailaddress): array
+    public function loadId(string $mailaddress): ?string
     {
         $sql = "
             SELECT photographer_id
               FROM photographer_info
              WHERE photographer_mailaddress = ?
         ";
-        return $this->db->getRow($sql, $mailaddress);
+        return $this->db->getOne($sql, $mailaddress);
     }
 }
