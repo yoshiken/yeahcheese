@@ -41,7 +41,7 @@ class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
             return 'photographer_login';
         }
 
-        $userid = $cu->loadID($this->af->get('mailaddress'));
+        $userid = $cu->loadId($this->af->get('mailaddress'));
         $sessionUserId = [
             'id' =>  $userid['photographer_id']
         ];

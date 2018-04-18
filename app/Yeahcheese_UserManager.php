@@ -62,7 +62,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
      * @param string $mailaddress
      * @return array = array('id' => integer )
      */
-    public function loadID(string $mailaddress): array
+    public function loadId(string $mailaddress): array
     {
         $sql = "
             SELECT photographer_id
