@@ -8,7 +8,7 @@ class Yeahcheese_Action_EventList extends Yeahcheese_ActionClass
     public function prepare()
     {
         $ev = $this->backend->getManager('event');
-        $hasevent = $ev->hasEvents((int)$this->session->get('userid')[id]);
+        $hasevent = $ev->hasEvents($this->session->get('userid')[id]);
         if (Ethna::isError($hasevent)) {
             $this->ae->addObject('hasnotevent', $hasevent);
             return 'event_list';
