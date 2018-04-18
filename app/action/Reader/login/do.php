@@ -7,7 +7,7 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 {
 
     public $form = [
-    'mailaddress' => [
+    'event_key' => [
       'name'          => '認証キー',
       'required'      => true,
       'type'          => VAR_TYPE_STRING,
