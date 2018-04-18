@@ -37,7 +37,7 @@
     <td><input type="hidden" name="event_end_day" value="{$i.0.event_end_day}" readonly required></td>
   </tr>
   <tr>
-    <td><input type="submit" name="action_event_create" value="編集"></td>
+    <td><input type="submit" name="action_event_edit" value="編集"></td>
   </tr>
 </table>
 </p>
