@@ -32,6 +32,11 @@ class Yeahcheese_Form_CreatPhotographerDo extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
 {
+    public function authenticate()
+    {
+        $this->session->start();
+    }
+
     public function prepare()
     {
         if ($this->af->validate() > 0) {
@@ -59,6 +64,13 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
         $record['photographer_mailaddress'] = $this->af->get('mailaddress');
         $record['photographer_pw'] = hash('sha256', $this->af->get('password'));
         $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
+
+        $userid = $cu->loadID($this->af->get('mailaddress'));
+        $sessionUserId = [
+            'id' =>  $userid['photographer_id']
+        ];
+        $this->session->set('userid', $sessionUserId);
+
         return 'creat_photographer_success';
     }
 }
