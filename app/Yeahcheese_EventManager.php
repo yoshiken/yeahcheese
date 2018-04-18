@@ -73,4 +73,21 @@ class Yeahcheese_EventManager extends Ethna_AppManager
          $dbresult = $this->db->getall($sql.$event_id);
          return $dbresult;
     }
+    /**
+     * 認証キーを元にイベントを取得
+     *
+     * @param string $eventkey
+     * @return mixed 正常時:null、異常時：Ethna_Error
+     */
+    public function loadEventPutKey(string $eventkey): ?\Ethna_Error
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE event_key = ?
+        ";
+        return ($this->db->getRow($sql, $eventkey))
+        ? null:
+        Ethna::raiseNotice('イベントが存在していません', E_EVENT_NOTFOUND);
+    }
 }
