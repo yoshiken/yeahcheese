@@ -4,4 +4,4 @@
 
 <p><a href="/?action_event_list=true">イベント一覧</a></p>
 
-<p><a href="/">ログアウト</a></p>
+<p><a href="/?action_photographer_login_out=true">ログアウト</a></p>
