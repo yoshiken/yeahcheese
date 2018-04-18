@@ -57,4 +57,20 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
 >>>>>>> セッションから担当のイベントIDを取得した
     }
+    /**
+     * イベント情報を取得
+     *
+     * @param string $event_id
+     * @return mixed 正常時:array、異常時：Ethna_Error
+     */
+    public function fetchEvent($event_id)
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE event_id =
+        ";
+         $dbresult = $this->db->getall($sql.$event_id);
+         return $dbresult;
+    }
 }
