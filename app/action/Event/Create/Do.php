@@ -48,7 +48,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         $uploaddir = 'uploads/'. $eventkey ."/";
         mkdir($uploaddir, 755);
 
-
+        //SQL発行
         $record['event_name'] = $this->af->get('event_name');
         $record['event_key'] = $eventkey;
         $record['event_start_day'] = $this->af->get('event_start_day');
