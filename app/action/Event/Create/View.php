@@ -58,7 +58,6 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
                 if ($_FILES['event_photo']['size'][$i] > 5242880) {
                     return 'event_create';
                 }
-                var_dump($_FILES['event_photo']['size']);
             }
 
 
