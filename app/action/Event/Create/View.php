@@ -21,6 +21,12 @@ class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
+      'event_photo' => [
+        'name'          => '写真',
+        'required'      => true,
+        'type'          => VAR_TYPE_FILETYPE,
+        'max'           => 5000
+        ],
     );
 }
 
