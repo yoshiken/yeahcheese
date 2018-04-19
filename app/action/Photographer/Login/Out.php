@@ -5,13 +5,9 @@
  */
 class Yeahcheese_Action_PhotographerLoginOut extends Yeahcheese_ActionClass
 {
-    public function authenticate()
-    {
-        unset($this->session);
-    }
-
     public function perform()
     {
+        $this->session->destroy();
         return 'photographer_login';
     }
 }
