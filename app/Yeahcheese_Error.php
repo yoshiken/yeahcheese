@@ -18,3 +18,4 @@
  */
 define('E_PASSWORD_COMPARISON', 300);
 define('E_MAILADDRESS_REGISTERED', 301);
+define('E_LOGIN_USER', 302);
