@@ -22,11 +22,6 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
 {
-    public function authenticate()
-    {
-        $this->session->start();
-    }
-
     public function prepare()
     {
         if ($this->af->validate() > 0) {
@@ -40,6 +35,7 @@ class Yeahcheese_Action_PhotographerLoginDo extends Yeahcheese_ActionClass
             $this->ae->addObject('login_error', $userlogin);
             return 'photographer_login';
         }
+        $this->session->start();
         $sessionUserId = [
             'id' =>  $cu->loadId($this->af->get('mailaddress'))
         ];
