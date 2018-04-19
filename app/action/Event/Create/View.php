@@ -21,11 +21,11 @@ class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-      'event_photo' => [
-        'name'          => '写真',
-        'required'      => true,
-        'type'          => VAR_TYPE_FILETYPE,
-        'max'           => 5000
+      'event_photo'      => [
+        'type'       => [VAR_TYPE_FILE],
+        'form_type'  => FORM_TYPE_FILE,
+        'name'       => '写真',
+        'required'   => true,
         ],
     );
 }
@@ -53,13 +53,21 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
                 }
             }
 
+            //ファイルサイズチェック
+            for ($i=0; $i < count($_FILES['event_photo']['size']); $i++) {
+                if ($_FILES['event_photo']['size'][$i] > 5242880) {
+                    return 'event_create';
+                }
+                var_dump($_FILES['event_photo']['size']);
+            }
+
+
             //www/uploads/tmpに一旦入れて作業完了はeventkeyごとのフォルダーに
             //そうでない場合は破棄
             $uploadphoto= [];
             for ($i=0; $i < count($_FILES['event_photo']['name']); $i++) {
                 $tmpuploaddir = 'uploads/tmp/';
                 $eventphototmpname = $_FILES['event_photo']['tmp_name'][$i];
-
                 //画像ファイル名は重複する恐れがあるので画像自体をハッシュ化してrenameする
                 $eventnamehash = hash_file("sha1", $eventphototmpname).'.jpg';
                 $tmpuploaddir = $tmpuploaddir. $eventnamehash;
