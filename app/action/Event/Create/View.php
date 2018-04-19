@@ -26,7 +26,7 @@ class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
 {
-    public function perform()
+    public function prepare()
     {
         if ($this->af->validate() > 0) {
             return 'event_create';
@@ -67,7 +67,13 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
                 $uploadphoto[$i]['phototmppath'] = $tmpuploaddir;
             }
             $this->af->setApp('uploadphoto', $uploadphoto);
-            return 'event_create_view';
+            return null;
         }
+    }
+
+
+    public function perform()
+    {
+            return 'event_create_view';
     }
 }
