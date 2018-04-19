@@ -1,7 +1,7 @@
 <?php
 /**
- *  Photographer/Login/Do.php
- *  Action ログイン実行処理
+ *  Photographer/Login/Out.php
+ *  Action ログアウト実行処理
  */
 class Yeahcheese_Action_PhotographerLoginOut extends Yeahcheese_ActionClass
 {
