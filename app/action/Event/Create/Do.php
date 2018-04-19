@@ -48,10 +48,6 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         $uploaddir = 'uploads/'. $eventkey ."/";
         mkdir($uploaddir, 755);
 
-        //uploads/tmpファイルからeventごとのフォルダに移動
-        for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
-            rename($this->af->get('photo_tmp_path')[$i], $uploaddir.basename($this->af->get('photo_tmp_path')[$i]));
-        }
 
         $record['event_name'] = $this->af->get('event_name');
         $record['event_key'] = $eventkey;
@@ -65,6 +61,12 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
             $this->ae->addObject('dberror', $insertevent);
             return 'event_create';
         }
+
+        //uploads/tmpファイルからeventごとのフォルダに移動
+        for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
+            rename($this->af->get('photo_tmp_path')[$i], $uploaddir.basename($this->af->get('photo_tmp_path')[$i]));
+        }
+
         return null;
     }
 
