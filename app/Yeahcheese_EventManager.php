@@ -18,7 +18,6 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         $this->db->AutoExecute(event_info, $record, 'INSERT');
     }
     /**
-<<<<<<< HEAD
      * 日付チェック
      *
      * @param string $startday
@@ -37,14 +36,13 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         ! ($sd === $ed)
         ?: $result = Ethna::raiseNotice('公開開始日と公開終了日が同じです', E_DAY_SAME);
         return $result;
-=======
      * 写真家(ユーザー)がイベントを担当しているか
      * 担当しているならイベントIDを返す
      *
-     * @param string $photographer_id
-     * @return mixed 正常時:array、異常時：Ethna_Error
+     * @param integer $photographer_id
+     * @return mixed 正常時:null、異常時：Ethna_Error
      */
-    public function hasEvents(string $photographer_id)
+    public function hasEvents(int $photographer_id)
     {
         $sql = "
             SELECT *
@@ -55,39 +53,6 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         return ($dbresult)
         ? $dbresult :
         Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
->>>>>>> セッションから担当のイベントIDを取得した
-    }
-    /**
-     * イベント情報を取得
-     *
-     * @param string $event_id
-     * @return mixed 正常時:array、異常時：Ethna_Error
-     */
-    public function fetchEvent($event_id)
-    {
-        $sql = "
-            SELECT *
-              FROM event_info
-             WHERE event_id =
-        ";
-         $dbresult = $this->db->getall($sql.$event_id);
-         return $dbresult;
-    }
-    /**
-     * 認証キーを元にイベントを取得
-     *
-     * @param string $eventkey
-     * @return mixed 正常時:null、異常時：Ethna_Error
-     */
-    public function loadEventPutKey(string $eventkey): ?\Ethna_Error
-    {
-        $sql = "
-            SELECT *
-              FROM event_info
-             WHERE event_key = ?
-        ";
-        return ($this->db->getRow($sql, $eventkey))
-        ? null:
-        Ethna::raiseNotice('イベントが存在していません', E_EVENT_NOTFOUND);
+
     }
 }
