@@ -25,7 +25,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
      * @param string $endday
      * @return mixed 正常時:null、異常時：Ethna_Error
      */
-    public function compareTime($startday, $endday): ?\Ethna_Error
+    public function compareTime(string $startday, string $endday): ?\Ethna_Error
     {
         $sd = strtotime($startday);
         $ed = strtotime($endday);
