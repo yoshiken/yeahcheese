@@ -31,6 +31,22 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         if ($this->af->validate() > 0) {
             return 'event_create';
         } else {
+            //日付チェック
+            $ev = $this->backend->getManager('event');
+            $comparetime = $ev->compareTime($this->af->get('event_start_day'), $this->af->get('event_end_day'));
+            if (Ethna::isError($comparetime)) {
+                $code = $comparetime->getCode();
+                if ($code == 303) {
+                    $this->ae->addObject('event_end_day', $comparetime);
+                    return 'event_create';
+                }
+                elseif ($code == 304) {
+                    $this->ae->addObject('event_start_day', $comparetime);
+                    $this->ae->addObject('event_end_day', $comparetime);
+                    return 'event_create';
+                }
+            }
+
             //www/uploads/tmpに一旦入れて作業完了はeventkeyごとのフォルダーに
             //そうでない場合は破棄
             $uploadphoto= [];
