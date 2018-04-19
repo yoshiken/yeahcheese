@@ -73,4 +73,15 @@ class Yeahcheese_EventManager extends Ethna_AppManager
          $dbresult = $this->db->getall($sql.$event_id);
          return $dbresult;
     }
+    /**
+     * イベント更新
+     *
+     * @param array $record
+     * @return mixed 正常時:null、異常時：Ethna_Error
+     */
+      public function updateEvent(array $record): ?\Ethna_Error
+      {
+          $this->db->AutoExecute(event_info, $record, 'UPDATE', 'event_id = '.$record['event_id']);
+          return null;
+      }
 }
