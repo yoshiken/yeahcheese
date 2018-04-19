@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <td>イベント写真</td>
-              <td><input type="file" name="event_photo[]" value="{$form.event_photo}" multiple>{message name="event_photo"}</td>
+              <td><input type="file" name="event_photo_tmp[]" value="{$form.event_photo}" multiple>{message name="event_photo"}</td>
     <tr>
         {foreach from=$app.event_photo item=photo_url}
         <td><img src={$photo_url} width="128" height="128"><input type="submit" name="action_event_edit_photo_delete" value="画像を削除"></td>
@@ -34,6 +34,6 @@
         {/foreach}
   </table>
   <p>
-  <input type="submit" name="action_event_edit_view" value="プレビュー">
+  <input type="submit" name="action_event_edit_do" value="Update">
   </p>
 </form>
