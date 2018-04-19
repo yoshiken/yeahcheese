@@ -24,7 +24,7 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
       'photo_tmp_path' => [
         'name'          => 'tmppath',
         'required'      => true,
-        'type'          => array(VAR_TYPE_STRING),
+        'type'          => [VAR_TYPE_STRING],
         ],
     );
 }
