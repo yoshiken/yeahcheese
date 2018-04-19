@@ -40,10 +40,10 @@ class Yeahcheese_EventManager extends Ethna_AppManager
     /* 写真家(ユーザー)がイベントを担当しているか
      * 担当しているならイベントIDを返す
      *
-     * @param string $photographer_id
-     * @return mixed 正常時:array、異常時：Ethna_Error
+     * @param integer $photographer_id
+     * @return mixed 正常時:null、異常時：Ethna_Error
      */
-    public function hasEvents(string $photographer_id)
+    public function hasEvents(int $photographer_id)
     {
         $sql = "
             SELECT *
