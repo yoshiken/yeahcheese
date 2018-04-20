@@ -53,7 +53,6 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         return ($dbresult)
         ? $dbresult :
         Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
-
     }
     /**
     * 日付取得
