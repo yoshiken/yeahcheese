@@ -23,3 +23,5 @@ define('E_DAY_EARLY', 303);
 define('E_DAY_SAME', 304);
 define('E_EVENT_DONTHAVE', 305);
 define('E_EVENT_NOTFOUND', 306);
+define('E_DAY_START', 307);
+define('E_DAY_END', 308);
