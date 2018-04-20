@@ -35,6 +35,7 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
             $this->ae->addObject(null, $Viewingrights);
             return 'reader_home';
         }
+        $this->af->setApp('eventdate', $eventdata)
         return null;
     }
 
