@@ -16,7 +16,7 @@ class Yeahcheese_UserManager extends Ethna_AppManager
    */
     public function comparisonPassword(string $password, string $password_confirm): ?\Ethna_Error
     {
-        return ($password == $password_confirm)
+        return ($password === $password_confirm)
         ? null
         : Ethna::raiseNotice('パスワードが一致しません', E_PASSWORD_COMPARISON);
     }
