@@ -34,7 +34,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
    /**
      * イベントキー(認証キー)作成
      *
-     * @return string %r_str
+     * @return string r_str
      */
     public function createEventkey()
     {
