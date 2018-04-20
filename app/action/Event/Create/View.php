@@ -83,7 +83,7 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         $this->af->setApp('uploadphoto', $uploadphoto);
         return null;
     }
-}
+
 
 
     public function perform()
