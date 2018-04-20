@@ -97,4 +97,25 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         ? null:
         Ethna::raiseNotice('イベントが存在していません', E_EVENT_NOTFOUND);
     }
+    /**
+    * 日付取得
+    *
+    * @param string $startday
+    * @param string $endday
+    * @return $array = ('start' => string ,'end' => staring);
+    */
+    public function isViewingperiod(string $startday, string $endday): ?\Ethna_Error
+    {
+        $today = time();
+        $day = ['start' => strtotime($startday)]
+        $day += ['end' => strtotime($endday)];
+
+        $result = null
+        $today<=$dat['start']
+        ?: $result = Ethna::raiseNotice('公開開始日前です', E_DAY_START);
+        $today>$dat['end']
+        ?: $result = Ethna::raiseNotice('公開終了日を過ぎています', E_DAY_END);
+
+        return $result;
+    }
 }
