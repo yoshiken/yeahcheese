@@ -36,7 +36,8 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         ! ($sd === $ed)
         ?: $result = Ethna::raiseNotice('公開開始日と公開終了日が同じです', E_DAY_SAME);
         return $result;
-     * 写真家(ユーザー)がイベントを担当しているか
+    }
+    /* 写真家(ユーザー)がイベントを担当しているか
      * 担当しているならイベントIDを返す
      *
      * @param integer $photographer_id
