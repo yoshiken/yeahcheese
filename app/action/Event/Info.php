@@ -42,8 +42,7 @@
 
 class Yeahcheese_Action_EventInfo extends Yeahcheese_ActionClass
 {
-
-    public function perform()
+    public function prepare()
     {
         $eventdata = ($this->af->form_vars);
         $this->af->setApp('eventdata', $eventdata);
@@ -53,6 +52,13 @@ class Yeahcheese_Action_EventInfo extends Yeahcheese_ActionClass
             }
         }
         $this->af->setApp('event_photo', $eventphoto);
+        return null;
+    }
+
+
+
+    public function perform()
+    {
         return 'event_info';
     }
 }
