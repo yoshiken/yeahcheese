@@ -50,7 +50,6 @@ class Yeahcheese_Action_EventEdit extends Yeahcheese_ActionClass
             }
         }
         $this->af->setApp('event_photo', $eventphoto);
-        $this->af->validate();
         return 'event_edit';
     }
 }
