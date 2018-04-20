@@ -107,10 +107,10 @@ class Yeahcheese_EventManager extends Ethna_AppManager
     public function isViewingperiod(string $startday, string $endday): ?\Ethna_Error
     {
         $today = time();
-        $day = ['start' => strtotime($startday)]
+        $day = ['start' => strtotime($startday)];
         $day += ['end' => strtotime($endday)];
 
-        $result = null
+        $result = null;
         $today<=$dat['start']
         ?: $result = Ethna::raiseNotice('公開開始日前です', E_DAY_START);
         $today>$dat['end']
