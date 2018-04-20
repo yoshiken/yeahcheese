@@ -31,6 +31,11 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
 
 class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
 {
+   /**
+     * イベントキー(認証キー)作成
+     *
+     * @return string %r_str
+     */
     public function createEventkey()
     {
         $str = array_merge(range('0', '9'), range('A', 'Z'));
