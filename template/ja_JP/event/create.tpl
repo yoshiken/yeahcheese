@@ -16,7 +16,7 @@
       <td><input type="date" name="event_end_day" value="{$form.event_end_day}" required>{message name="event_end_day"}</td>
     </tr>
     <tr>
-      <td>写真</td>
+      <td>写真(5MB/枚まで)</td>
       <td><input type="file" name="event_photo[]" value="{$form.event_photo}" multiple required>{message name="event_photo"}</td>
     </tr>
   </table>
