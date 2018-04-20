@@ -28,6 +28,11 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
             $this->ae->addObject('event_key_error', $eventdate);
             return 'reader_home';
         }
+        $Viewingrights = $ev->isViewingPeriod($this->af->get('event_start_day'), $this->af->get('event_end_day'));
+        if (Ethna::isError($Viewingrights)) {
+            $this->ae->addObject(null, $Viewingrights);
+            return 'reader_home';
+        }
         return null;
     }
 
