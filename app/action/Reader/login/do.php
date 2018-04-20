@@ -23,11 +23,12 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
             return 'reader_home';
         }
         $rl = $this->backend->getManager('event');
-        $eventdate = $rl->loadEventPutKey($this->af->get('event_key'));
+        $eventdate = $rl->loadEventData($this->af->get('event_key'));
         if (Ethna::isError($eventdate)) {
             $this->ae->addObject('event_key_error', $eventdate);
             return 'reader_home';
         }
+        $this->af->setApp('eventdate'$eventdate)
         $Viewingrights = $ev->isViewingPeriod($this->af->get('event_start_day'), $this->af->get('event_end_day'));
         if (Ethna::isError($Viewingrights)) {
             $this->ae->addObject(null, $Viewingrights);
