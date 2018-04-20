@@ -2,6 +2,7 @@
 /**
  *  Reader/Login/Do.php
  *  Action 認証キーの認証
+ *         イベント情報取得
  */
 class Yeahcheese_Form_ReaderLoginDo extends Yeahcheese_ActionForm
 {
