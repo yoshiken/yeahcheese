@@ -111,8 +111,6 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         $day += ['end' => strtotime($endday)];
 
         $result = null;
-        var_dump($day);
-        var_dump($today);
         $today > $day['start']
         ?: $result = Ethna::raiseNotice('公開開始日前です', E_DAY_START);
         $today < $day['end']
