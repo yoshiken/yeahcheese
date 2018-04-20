@@ -38,6 +38,6 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
 
     public function perform()
     {
-        return 'event_info';
+        return 'reader_event_view';
     }
 }
