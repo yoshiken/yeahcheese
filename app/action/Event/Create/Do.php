@@ -45,7 +45,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
         $eventkey = $this->createEventkey();
 
         //eventごとのDirectory作成
-        $uploaddir = 'uploads/'. $eventkey ."/";
+        $uploaddir = 'uploads/' . $eventkey . '/';
         mkdir($uploaddir, 755);
 
         //SQL発行
