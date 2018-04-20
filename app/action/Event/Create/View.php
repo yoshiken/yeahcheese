@@ -43,11 +43,11 @@ class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
         $comparetime = $ev->compareTime($this->af->get('event_start_day'), $this->af->get('event_end_day'));
         if (Ethna::isError($comparetime)) {
             $code = $comparetime->getCode();
-            if ($code == 303) {
+            if ($code == E_DAY_EARLY) {
                 $this->ae->addObject('event_end_day', $comparetime);
                 return 'event_create';
             }
-            if ($code == 304) {
+            if ($code == E_DAY_SAME) {
                 $this->ae->addObject('event_start_day', $comparetime);
                 $this->ae->addObject('event_end_day', $comparetime);
                 return 'event_create';
