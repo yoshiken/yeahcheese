@@ -19,7 +19,7 @@
     </tr>
   </table>
 {foreach from=$app.uploadphoto item='updata'}
-  <br />
+  <br>
       <li>{$updata.photoname} <br>
         <img src={$updata.phototmppath} width="128" height="128"></li>
         <input type="hidden" name="photo_tmp_path[]" value="{$updata.phototmppath}" readonly required/>
