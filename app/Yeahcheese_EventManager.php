@@ -13,10 +13,9 @@ class Yeahcheese_EventManager extends Ethna_AppManager
    * @param array $record
    * @return null
    */
-    public function eventsCreate(array $record): ?
+    public function eventsCreate(array $record)
     {
         $this->db->AutoExecute(event_info, $record, 'INSERT');
-        return null;
     }
     /**
      * 日付チェック
