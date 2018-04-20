@@ -61,7 +61,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
      * @param string $event_id
      * @return mixed 正常時:array、異常時：Ethna_Error
      */
-    public function fetchEvent($event_id)
+    public function fetchEvent(string $event_id)
     {
         $sql = "
             SELECT *
