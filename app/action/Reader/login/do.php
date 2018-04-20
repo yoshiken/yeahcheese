@@ -32,7 +32,7 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
 
         $Viewingrights = $ev->isViewingPeriod($eventdata['event_start_day'], $eventdata['event_end_day']);
         if (Ethna::isError($Viewingrights)) {
-            $this->ae->addObject(null, $Viewingrights);
+            $this->ae->addObject('event_key_error', $Viewingrights);
             return 'reader_home';
         }
         $this->af->setApp('eventdate', $eventdata)
