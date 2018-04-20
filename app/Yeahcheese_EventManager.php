@@ -59,7 +59,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
     *
     * @param string $startday
     * @param string $endday
-    * @return $array = ('start' => string ,'end' => staring);
+    * @return mixed 正常時:null、異常時：Ethna_Error
     */
     public function isViewingperiod(string $startday, string $endday): ?\Ethna_Error
     {
@@ -83,7 +83,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
      * @param string $event_key
      * @return mixed 正常時:array、異常時：Ethna_Error
      */
-    public function loadEventData($event_key)
+    public function loadEventData(string $event_key)
     {
         $sql = "
             SELECT *
