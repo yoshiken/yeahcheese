@@ -5,7 +5,7 @@
  */
 class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
 {
-    public $form = array(
+    public $form = [
       'event_name' => [
         'name'          => 'イベント名',
         'required'      => true,
@@ -26,7 +26,7 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => [VAR_TYPE_STRING],
         ],
-    );
+    ];
 }
 
 class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
