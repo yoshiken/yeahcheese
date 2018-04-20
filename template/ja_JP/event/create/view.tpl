@@ -22,7 +22,8 @@
     <br>
     <li>{$updata.photoname} <br>
         <img src={$updata.phototmppath} width="128" height="128"></li>
-    <input type="hidden" name="photo_tmp_path[]" value="{$updata.phototmppath}" readonly required/> {/foreach}
+    <input type="hidden" name="photo_tmp_path[]" value="{$updata.phototmppath}" readonly required/>
+    {/foreach}
     <p>
         <input type="submit" name="action_event_create" value="編集">
         <input type="submit" name="action_event_create_do" value="作成">
