@@ -5,7 +5,7 @@
  */
 class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
 {
-    public $form = array(
+    public $form = [
       'event_name' => [
         'name'          => 'イベント名',
         'required'      => true,
@@ -27,7 +27,7 @@ class Yeahcheese_Form_EventCreateView extends Yeahcheese_ActionForm
         'name'       => '写真',
         'required'   => true,
         ],
-    );
+    ];
 }
 
 class Yeahcheese_Action_EventCreateView extends Yeahcheese_ActionClass
