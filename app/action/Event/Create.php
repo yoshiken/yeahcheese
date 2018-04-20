@@ -34,7 +34,6 @@ class Yeahcheese_Action_EventCreate extends Yeahcheese_ActionClass
 {
     public function perform()
     {
-        $this->af->validate();
         return 'event_create';
     }
 }
