@@ -30,10 +30,10 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         $ed = strtotime($endday);
 
         $result = null;
-        !($sd > $ed)
+        ! ($sd > $ed)
         ?: $result = Ethna::raiseNotice('公開開始日より公開終了日の方が早いです', E_DAY_EARLY);
 
-        !($sd === $ed)
+        ! ($sd === $ed)
         ?: $result = Ethna::raiseNotice('公開開始日と公開終了日が同じです', E_DAY_SAME);
         return $result;
     }
