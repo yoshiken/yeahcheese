@@ -2,7 +2,7 @@
 
 <form action="." method="post" enctype="multipart/form-data">
   <table border="0">
-    <input type="hidden" name="MAX_FILE_SIZE" value="50000KB">
+    <input type="hidden" name="MAX_FILE_SIZE" value="5242880">
     <tr>
       <td>イベント名</td>
       <td><input type="text" name="event_name" value="{$form.event_name}" required>{message name="event_name"}</td>
