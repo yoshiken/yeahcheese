@@ -35,7 +35,15 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
             $this->ae->addObject('event_key_error', $Viewingrights);
             return 'reader_home';
         }
-        $this->af->setApp('eventdate', $eventdata)
+        $this->af->setApp('eventdate', $eventdata);
+
+        foreach (glob('uploads/'.$this->af->get('event_key').'/*') as $file) {
+            if (is_file($file)) {
+                $eventphoto[] = $file;
+            }
+        }
+        $this->af->setApp('event_photo', $eventphoto);
+
         return null;
     }
 
