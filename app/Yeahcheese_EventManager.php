@@ -68,9 +68,11 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         $day += ['end' => strtotime($endday)];
 
         $result = null;
-        $today<=$dat['start']
+        var_dump($day);
+        var_dump($today);
+        $today > $day['start']
         ?: $result = Ethna::raiseNotice('公開開始日前です', E_DAY_START);
-        $today>$dat['end']
+        $today < $day['end']
         ?: $result = Ethna::raiseNotice('公開終了日を過ぎています', E_DAY_END);
 
         return $result;
@@ -86,9 +88,9 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         $sql = "
             SELECT *
               FROM event_info
-             WHERE event_key =
+             WHERE event_key = ?
         ";
-         return($dbresult = $this->db->getRow($sql.$event_key))
+         return($dbresult = $this->db->getRow($sql, $event_key))
          ? $dbresult
          : Ethna::raiseNotice('イベントが存在しません', E_EVENT_DONTHAVE) ;
     }
