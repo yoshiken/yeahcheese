@@ -75,4 +75,21 @@ class Yeahcheese_EventManager extends Ethna_AppManager
 
         return $result;
     }
+    /**
+     * イベント情報を取得
+     *
+     * @param string $event_key
+     * @return mixed 正常時:array、異常時：Ethna_Error
+     */
+    public function loadEventData($event_key)
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE event_key =
+        ";
+         return($dbresult = $this->db->getRow($sql.$event_key))
+         ? $dbresult
+         : Ethna::raiseNotice('イベントが存在しません', E_EVENT_DONTHAVE) ;
+    }
 }
