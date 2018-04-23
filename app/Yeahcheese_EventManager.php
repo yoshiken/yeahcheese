@@ -68,8 +68,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
               FROM event_info
              WHERE event_id =
         ";
-         $dbresult = $this->db->getall($sql.$event_id);
-         return $dbresult;
+         return $this->db->getAll($sql.$event_id);
     }
     /**
      * イベント更新
