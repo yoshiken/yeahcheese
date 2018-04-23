@@ -16,17 +16,23 @@
         <div class="row">
             <div class="one-half column" style="margin-top: 8%">
                 <section class="header">
-                    <h2 class="title">Yeahcheese</h2>
+                    <h2 class="title">Yeahcheese{$app.usermaill)}</h2>
                 </section>
-
+                {$app.usermaill}
                 <div class="navbar-spacer"></div>
                 <nav class="navbar">
                     <div class="container">
                         <ul class="navbar-list">
+                            {if isset($app.usermaill) }
                             <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_home=true">ホーム画面</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_list=true">イベント一覧</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_create=true">イベント作成</a></li>
-                            <li class="navbar-item"><a class="navbar-link" href="?action_reader=true">閲覧ページ</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_home=true"></a></li>
+                            {else}
+                            <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_login=true">ログイン</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
+                            {/if}
                         </ul>
                     </div>
                 </nav>

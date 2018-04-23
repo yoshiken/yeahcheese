@@ -71,4 +71,20 @@ class Yeahcheese_UserManager extends Ethna_AppManager
         ";
         return $this->db->getOne($sql, $mailaddress);
     }
+    /**
+     * IDからメールアドレスを取得
+     *
+     * @param string $id
+     * @return mixed 正常値:string 異常時:null
+     */
+    public function loadMailaddress(string $id): ?string
+    {
+        $sql = "
+            SELECT photographer_mailaddress
+              FROM photographer_info
+             WHERE photographer_id = ?
+        ";
+        return $this->db->getOne($sql, $id);
+    }
+
 }
