@@ -47,14 +47,9 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
             return 'event_edit';
         }
 
-        $record[
-        'event_id'          =>  $this->af->get('event_id'),
-        'event_name'        =>  $this->af->get('event_name'),
-        'event_key'         =>  $this->af->get('event_key'),
-        'event_start_day'   =>  $this->af->get('event_start_day'),
-        'event_end_day'     =>  $this->af->get('event_end_day'),
-        'photographer_id'   =>  $this->session->get('userid')[id],
-        ];
+        $record = $this->af->getArray();
+        $record['photographer_id']   = $this->session->get('userid')[id];
+        unset($record['event_photo']);
 
         $ev = $this->backend->getManager('event');
         $updateevent = $ev->updateEvent($record);
