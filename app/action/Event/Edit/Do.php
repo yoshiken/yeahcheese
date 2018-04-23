@@ -31,9 +31,10 @@ class Yeahcheese_Form_EventEditDo extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-    'event_photo_tmp' => [
-        'name'          => 'イベント写真',
-        'type'          => [VAR_TYPE_STRING],
+    'event_photo'      => [
+        'type'       => [VAR_TYPE_FILE],
+        'name'       => '写真',
+        'required'   => true,
         ],
     'event_photo_url' => [
         'name'          => 'イベント写真',
@@ -58,6 +59,17 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
         if (Ethna::isError($updateevent)) {
             $this->ae->addObject('dberror', $updateevent);
             return 'event_edit';
+        }
+
+        //イベント写真をtmpからuploads/$event_key以下に移動
+        $uploaddir = 'uploads/' . $this->af->get('event_key') . '/';
+        for ($i=0; $i < count($this->af->get('event_photo')); $i++) {
+            $eventphototmpname = $this->af->get('event_photo')[$i]['tmp_name'];
+            //画像ファイル名は重複する恐れがあるので画像自体をハッシュ化してrenameする
+            $eventnamehash = hash_file("sha1", $eventphototmpname).'.jpg';
+            $uploaddir = $uploaddir . $eventnamehash;
+
+            move_uploaded_file($this->af->get('event_photo')[$i]['tmp_name'], $uploaddir);
         }
 
         return null;
