@@ -1,4 +1,3 @@
-<h2>event List</h2>
 {if count($errors)}
 <ul>
     {foreach from=$errors item=error}
