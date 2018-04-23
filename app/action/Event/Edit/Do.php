@@ -73,6 +73,6 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
 
     public function perform()
     {
-            return 'event_edit_success';
+        return 'event_edit_success';
     }
 }
