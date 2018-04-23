@@ -59,12 +59,11 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
         }
 
         //イベント写真をtmpからuploads/$event_key以下に移動
-        $uploaddir = 'uploads/' . $this->af->get('event_key') . '/';
         for ($i=0; $i < count($this->af->get('event_photo')); $i++) {
+            $uploaddir = 'uploads/' . $this->af->get('event_key') . '/';
             $eventphototmpname = $this->af->get('event_photo')[$i]['tmp_name'];
             //画像ファイル名は重複する恐れがあるので画像自体をハッシュ化してrenameする
-            $eventnamehash = hash_file("sha1", $eventphototmpname).'.jpg';
-            $uploaddir = $uploaddir . $eventnamehash;
+            $uploaddir = $uploaddir . hash_file("sha1", $eventphototmpname).'.jpg';
 
             move_uploaded_file($eventphototmpname, $uploaddir);
         }
