@@ -48,7 +48,7 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
         }
 
         $record = $this->af->getArray();
-        $record['photographer_id']   = $this->session->get('userid')[id];
+        $record['photographer_id']   = $this->session->get('userid')['id'];
         unset($record['event_photo']);
 
         $ev = $this->backend->getManager('event');
