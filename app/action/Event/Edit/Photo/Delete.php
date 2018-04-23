@@ -18,7 +18,6 @@ class Yeahcheese_Action_EventEditPhotoDelete extends Yeahcheese_ActionClass
 {
     public function perform()
     {
-        var_dump($this->af->get('delphoto_url'));
         foreach ($this->af->get('delphoto_url') as $key => $delurl) {
             unlink($delurl);
         }
