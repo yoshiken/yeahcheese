@@ -31,12 +31,6 @@ class Yeahcheese_Form_EventEdit extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-      'event_photo' => [
-        'name'          => '写真',
-        'required'      => true,
-        'type'          => VAR_TYPE_FILE,
-        'file_size_max' => '5000KB',
-        ],
     ];
 }
 
