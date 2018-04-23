@@ -66,7 +66,7 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
             $eventnamehash = hash_file("sha1", $eventphototmpname).'.jpg';
             $uploaddir = $uploaddir . $eventnamehash;
 
-            move_uploaded_file($this->af->get('event_photo')[$i]['tmp_name'], $uploaddir);
+            move_uploaded_file($eventphototmpname, $uploaddir);
         }
         return null;
     }
