@@ -86,6 +86,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
      * @param string $eventkey
      * @return mixed 正常時:null、異常時：Ethna_Error
      */
+    }
     public function loadEventPutKey(string $eventkey): ?\Ethna_Error
     {
         $sql = "
