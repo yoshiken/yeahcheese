@@ -5,7 +5,7 @@
  */
 class Yeahcheese_Form_EventEditDo extends Yeahcheese_ActionForm
 {
-    public $form = array(
+    public $form = [
     'event_id' => [
         'name'          => 'イベントID',
         'required'      => true,
@@ -33,13 +33,13 @@ class Yeahcheese_Form_EventEditDo extends Yeahcheese_ActionForm
         ],
     'event_photo_tmp' => [
         'name'          => 'イベント写真',
-        'type'          => array(VAR_TYPE_STRING),
+        'type'          => [VAR_TYPE_STRING],
         ],
     'event_photo_url' => [
         'name'          => 'イベント写真',
-        'type'          => array(VAR_TYPE_STRING),
+        'type'          => [VAR_TYPE_STRING],
         ],
-    );
+    ];
 }
 
 class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass

@@ -5,7 +5,7 @@
  */
 class Yeahcheese_Form_EventEdit extends Yeahcheese_ActionForm
 {
-    public $form = array(
+    public $form = [
       'event_id' => [
         'name'          => 'イベントID',
         'required'      => true,
@@ -37,7 +37,7 @@ class Yeahcheese_Form_EventEdit extends Yeahcheese_ActionForm
         'type'          => VAR_TYPE_FILE,
         'file_size_max' => '5000KB',
         ],
-     );
+    ];
 }
 
 class Yeahcheese_Action_EventEdit extends Yeahcheese_ActionClass
