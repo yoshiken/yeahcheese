@@ -6,7 +6,7 @@
     {/foreach}
 </ul>
 {/if}
-{foreach from=$app.eventinfo key=myId item=i}
+{foreach from=$app.eventinfo item=i}
 <form action="." method="post">
     <table border="0">
         <p>
