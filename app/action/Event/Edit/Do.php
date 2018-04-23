@@ -47,6 +47,10 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
 {
     public function prepare()
     {
+        if ($this->af->validate() > 0) {
+            return 'event_edit';
+        }
+
         $record['event_id'] = $this->af->get('event_id');
         $record['event_name'] = $this->af->get('event_name');
         $record['event_key'] = $this->af->get('event_key');
@@ -71,16 +75,11 @@ class Yeahcheese_Action_EventEditDo extends Yeahcheese_ActionClass
 
             move_uploaded_file($this->af->get('event_photo')[$i]['tmp_name'], $uploaddir);
         }
-
         return null;
     }
 
     public function perform()
     {
-        if ($this->af->validate() > 0) {
-            return 'event_edit';
-        } else {
             return 'event_edit_success';
-        }
     }
 }
