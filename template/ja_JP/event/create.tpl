@@ -1,5 +1,3 @@
-<h2>event_create<h2>
-
 <form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <input type="hidden" name="MAX_FILE_SIZE" value="5242880">
