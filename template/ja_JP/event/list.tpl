@@ -44,3 +44,4 @@
 </p>
 </form>
 {/foreach}
+<p><a href="/?action_photographer_home=true">ホームへ戻る</a></p>
