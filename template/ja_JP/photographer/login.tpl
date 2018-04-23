@@ -11,6 +11,6 @@
     </tr>
   </table>
   <p>
-  <input type="submit" name="action_photographer_login_do" value="ログイン">
+  <input class="button-primary" type="submit" name="action_photographer_login_do" value="ログイン">
   </p>
 </form>

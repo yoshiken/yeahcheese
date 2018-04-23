@@ -1,15 +1,15 @@
-<h2>event_edit<h2>
-
 <form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <input type="hidden" name="MAX_FILE_SIZE" value="50000KB" />
     <tr>
-      <td>イベントID</td>
-      <td><input type="text" name="event_id" value="{$form.event_id}" readonly required>{message name="event_id"}</td>
+      <td>イベントID<br>(編集不可)</td>
+      <td>{$form.event_id}</td>
+      <td><input type="hidden" name="event_id" value="{$form.event_id}" readonly required>{message name="event_id"}</td>
     </tr>
     <tr>
-      <td>認証キー</td>
-      <td><input type="text" name="event_key" value="{$form.event_key}" readonly required>{message name="event_key"}</td>
+      <td>認証キー<br>(編集不可)</td>
+      <td>{$form.event_key}</td>
+      <td><input type="hidden" name="event_key" value="{$form.event_key}" readonly required>{message name="event_key"}</td>
     </tr>
     <tr>
       <td>イベント名</td>
@@ -35,7 +35,7 @@
         {/foreach}
   </table>
   <p>
-  <input type="submit" name="action_event_edit_photo_delete" value="選択した画像を削除">
-  <input type="submit" name="action_event_edit_do" value="Update">
+  <input class="button-primary" type="submit" name="action_event_edit_photo_delete" value="選択した画像を削除">
+  <input class="button-primary" type="submit" name="action_event_edit_do" value="Update">
   </p>
 </form>
