@@ -36,10 +36,6 @@ class Yeahcheese_Form_EventEditDo extends Yeahcheese_ActionForm
         'name'       => '写真',
         'required'   => true,
         ],
-    'event_photo_url' => [
-        'name'          => 'イベント写真',
-        'type'          => [VAR_TYPE_STRING],
-        ],
     ];
 }
 
