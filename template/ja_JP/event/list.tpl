@@ -12,28 +12,28 @@
         <p>
             <tr>
                 <td>イベントID</td>
-                <td>{$i.0.event_id}</td>
-                <td><input type="hidden" name="event_id" value="{$i.0.event_id}" readonly required></td>
+                <td>{$i.event_id}</td>
+                <td><input type="hidden" name="event_id" value="{$i.event_id}" readonly required></td>
             </tr>
             <tr>
                 <td>イベント名</td>
-                <td>{$i.0.event_name}</td>
-                <td><input type="hidden" name="event_name" value="{$i.0.event_name}" readonly required></td>
+                <td>{$i.event_name}</td>
+                <td><input type="hidden" name="event_name" value="{$i.event_name}" readonly required></td>
             </tr>
             <tr>
                 <td>イベント認証キー</td>
-                <td>{$i.0.event_key}</td>
-                <td><input type="hidden" name="event_key" value="{$i.0.event_key}" readonly required></td>
+                <td>{$i.event_key}</td>
+                <td><input type="hidden" name="event_key" value="{$i.event_key}" readonly required></td>
             </tr>
             <tr>
                 <td>イベント公開日</td>
-                <td>{$i.0.event_start_day}</td>
-                <td><input type="hidden" name="event_start_day" value="{$i.0.event_start_day}" readonly required></td>
+                <td>{$i.event_start_day}</td>
+                <td><input type="hidden" name="event_start_day" value="{$i.event_start_day}" readonly required></td>
             </tr>
             <tr>
                 <td>イベント終了日</td>
-                <td>{$i.0.event_end_day}</td>
-                <td><input type="hidden" name="event_end_day" value="{$i.0.event_end_day}" readonly required></td>
+                <td>{$i.event_end_day}</td>
+                <td><input type="hidden" name="event_end_day" value="{$i.event_end_day}" readonly required></td>
             </tr>
             <tr>
                 <td><input type="submit" name="action_event_edit" value="編集"></td>

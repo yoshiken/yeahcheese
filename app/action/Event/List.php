@@ -14,7 +14,7 @@ class Yeahcheese_Action_EventList extends Yeahcheese_ActionClass
             return 'event_list';
         }
         foreach ($hasevent as $key => $value) {
-            $eventinfo[$key] = $ev->fetchEvent($value);
+            $eventinfo[$key] = $ev->fetchEvent($value)[0];
         }
             $this->af->setApp('eventinfo', $eventinfo);
         return null ;
