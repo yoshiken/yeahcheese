@@ -28,7 +28,7 @@
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_list=true">イベント一覧</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_create=true">イベント作成</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
-                            {else}<a href="/?action_photographer_login_out=true">ログアウト</a>
+                            {else}
                             <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_login=true">ログイン</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
                             {/if}
