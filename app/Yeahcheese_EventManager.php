@@ -50,7 +50,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
               FROM event_info
              WHERE photographer_id  =
         ";
-         $dbresult = $this->db->getCol($sql.$photographer_id);
+        $dbresult = $this->db->getCol($sql.$photographer_id);
         return ($dbresult)
         ? $dbresult :
         Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
@@ -68,7 +68,7 @@ class Yeahcheese_EventManager extends Ethna_AppManager
               FROM event_info
              WHERE event_id =
         ";
-         return $this->db->getAll($sql.$event_id)[0];
+        return $this->db->getAll($sql.$event_id)[0];
     }
     /**
      * イベント更新
