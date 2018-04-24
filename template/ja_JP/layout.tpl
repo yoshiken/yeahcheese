@@ -28,8 +28,7 @@
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_list=true">イベント一覧</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_event_create=true">イベント作成</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
-                            <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_home=true"></a></li>
-                            {else}
+                            {else}<a href="/?action_photographer_login_out=true">ログアウト</a>
                             <li class="navbar-item"><a class="navbar-link" href="?action_Photographer_login=true">ログイン</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="?action_reader_home=true">閲覧ページ</a></li>
                             {/if}
@@ -49,6 +48,8 @@
             </div>
         </div>
     </div>
+<script src="js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
 </body>
 
 </html>

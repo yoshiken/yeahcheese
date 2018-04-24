@@ -71,9 +71,10 @@
                 <tr>
                     <th><input type="submit" name="action_event_edit" value="編集"></th>
                 </tr>
+        </table>
                 <tr>
                     {foreach from=$app.event_photo item=photo_url}
-                    <td><img src={$photo_url} width="128" height="128"></td>
+                    <td><img src={$photo_url} width="200" height="200"></td>
                     <input type="hidden" name="event_photo_url[]" value="{$photo_url}" readonly required>
                     {/foreach}
 <<<<<<< HEAD
@@ -83,6 +84,10 @@
 =======
                 </tr>
 
+<<<<<<< HEAD
 >>>>>>> バグ潰し
     </table>
+=======
+
+>>>>>>> 爆速にした(語彙力)
 </form>
