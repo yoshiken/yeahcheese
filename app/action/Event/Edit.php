@@ -1,9 +1,9 @@
 <?php
 /**
- *  Event/Info.php
- *  Action イベントページ表示
+ *  Event/Edit.php
+ *  Action イベント編集画面
  */
-class Yeahcheese_Form_EventInfo extends Yeahcheese_ActionForm
+class Yeahcheese_Form_EventEdit extends Yeahcheese_ActionForm
 {
     public $form = [
            'event_id' => [
@@ -34,23 +34,16 @@ class Yeahcheese_Form_EventInfo extends Yeahcheese_ActionForm
     ];
 }
 
-class Yeahcheese_Action_EventInfo extends Yeahcheese_ActionClass
+class Yeahcheese_Action_EventEdit extends Yeahcheese_ActionClass
 {
-    public function prepare()
+    public function perform()
     {
-        $eventdata = ($this->af->form_vars);
-        $this->af->setApp('eventdata', $eventdata);
-        foreach (glob('uploads/' . $eventdata['event_key'] . '/*') as $file) {
+        foreach (glob('uploads/' . $this->af->get('event_key') . '/*') as $file) {
             if (is_file($file)) {
                 $eventphoto[] = $file;
             }
         }
         $this->af->setApp('event_photo', $eventphoto);
-        return null;
-    }
-
-    public function perform()
-    {
-        return 'event_info';
+        return 'event_edit';
     }
 }

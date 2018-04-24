@@ -37,4 +37,48 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         ?: $result = Ethna::raiseNotice('公開開始日と公開終了日が同じです', E_DAY_SAME);
         return $result;
     }
+    /* 写真家(ユーザー)がイベントを担当しているか
+     * 担当しているならイベントIDを返す
+     *
+     * @param string $photographer_id
+     * @return mixed 正常時:array、異常時：Ethna_Error
+     */
+    public function hasEvents(string $photographer_id)
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE photographer_id  =
+        ";
+        $dbresult = $this->db->getCol($sql.$photographer_id);
+        return ($dbresult)
+        ? $dbresult :
+        Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
+    }
+    /**
+     * イベント情報を取得
+     *
+     * @param string $event_id
+     * @return mixed 正常時:array、異常時：Ethna_Error
+     */
+    public function fetchEvent(string $event_id)
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE event_id =
+        ";
+        return $this->db->getAll($sql.$event_id)[0];
+    }
+    /**
+     * イベント更新
+     *
+     * @param array $record
+     * @return mixed 正常時:null、異常時：Ethna_Error
+     */
+    public function updateEvent(array $record): ?\Ethna_Error
+    {
+        $this->db->AutoExecute(event_info, $record, 'UPDATE', 'event_id = '.$record['event_id']);
+        return null;
+    }
 }

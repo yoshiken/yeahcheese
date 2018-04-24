@@ -22,6 +22,8 @@ require_once 'Yeahcheese_ViewClass.php';
 require_once 'Yeahcheese_UrlHandler.php';
 require_once 'adodb5/adodb.inc.php';
 require_once 'Yeahcheese_UserManager.php';
+require_once 'Yeahcheese_EventManager.php';
+
 /**
  *  Yeahcheese application Controller definition.
  *

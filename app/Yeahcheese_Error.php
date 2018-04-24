@@ -21,3 +21,4 @@ define('E_MAILADDRESS_REGISTERED', 301);
 define('E_LOGIN_USER', 302);
 define('E_DAY_EARLY', 303);
 define('E_DAY_SAME', 304);
+define('E_EVENT_DONTHAVE', 305);
