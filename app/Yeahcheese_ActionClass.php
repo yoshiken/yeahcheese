@@ -26,10 +26,6 @@ class Yeahcheese_ActionClass extends Ethna_ActionClass
      */
     public function authenticate()
     {
-        if ($this->session->get('userid')['id']) {
-            $cu = $this->backend->getManager('user');
-            $this->af->setApp('usermaill', $cu->loadMailaddress($this->session->get('userid')['id']));
-        }
         return parent::authenticate();
     }
 
@@ -58,4 +54,3 @@ class Yeahcheese_ActionClass extends Ethna_ActionClass
     }
 }
 // }}}
-
