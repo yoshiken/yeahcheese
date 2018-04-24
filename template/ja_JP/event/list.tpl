@@ -70,8 +70,7 @@
             <tr>
                 <td><input type="submit" name="action_event_edit" value="編集"></td>
                 <td><input type="submit" name="action_event_info" value="詳細"></td>
-                <a href="/?action_event_edit=true&event_id={$i.event_id}">編集</a>
-                <a class="button button-primary" href="/?action_event_infofirst=true&event_id={$i.event_id}">詳細</a>
+                <tb><a class="button button-primary" href="/?action_event_infofirst=true&event_id={$i.event_id}">爆速詳細</a></tb>
             </tr>
     </table>
 >>>>>>> 爆速にした(語彙力)
