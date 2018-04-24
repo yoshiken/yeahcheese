@@ -25,12 +25,14 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
         }
         $ev = $this->backend->getManager('event');
 
+        //イベントが合っているか and イベントデータの取得
         $eventdate = $ev->loadEventData($this->af->get('event_key'));
         if (Ethna::isError($eventdate)) {
             $this->ae->addObject('event_key_error', $eventdate);
             return 'reader_home';
         }
 
+        //公開日前 or 公開終了後判定
         $Viewingrights = $ev->isViewingPeriod($eventdate['event_start_day'], $eventdate['event_end_day']);
         if (Ethna::isError($Viewingrights)) {
             $this->ae->addObject('event_key_error', $Viewingrights);
@@ -38,6 +40,7 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
         }
         $this->af->setApp('eventdate', $eventdate);
 
+        //写真データ取得
         foreach (glob('uploads/' . $this->af->get('event_key') . '/*') as $file) {
             if (is_file($file)) {
                 $eventphoto[] = $file;
