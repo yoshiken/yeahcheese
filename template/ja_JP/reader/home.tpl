@@ -1,5 +1,3 @@
-<h2>Reader Page</h2>
-
 <form action="." method="post">
   <table border="0">
     <tr>
