@@ -50,9 +50,9 @@ class Yeahcheese_EventManager extends Ethna_AppManager
               FROM event_info
              WHERE photographer_id  =
         ";
-        $dbresult = $this->db->getCol($sql.$photographer_id);
-        return ($dbresult)
-        ? $dbresult :
+        $dbResult = $this->db->getCol($sql.$photographer_id);
+        return ($dbResult)
+        ? $dbResult :
         Ethna::raiseNotice('現在イベントが作成されていません', E_EVENT_DONTHAVE) ;
     }
     /**
@@ -115,8 +115,8 @@ class Yeahcheese_EventManager extends Ethna_AppManager
               FROM event_info
              WHERE event_key = ?
         ";
-         return($dbresult = $this->db->getRow($sql, $event_key))
-         ? $dbresult
+         return($dbResult = $this->db->getRow($sql, $event_key))
+         ? $dbResult
          : Ethna::raiseNotice('イベントが存在しません', E_EVENT_DONTHAVE) ;
     }
 }

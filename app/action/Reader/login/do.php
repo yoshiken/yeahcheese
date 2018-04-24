@@ -26,27 +26,27 @@ class Yeahcheese_Action_ReaderLoginDo extends Yeahcheese_ActionClass
         $ev = $this->backend->getManager('event');
 
         //イベントが合っているか and イベントデータの取得
-        $eventdate = $ev->loadEventData($this->af->get('event_key'));
-        if (Ethna::isError($eventdate)) {
-            $this->ae->addObject('event_key_error', $eventdate);
+        $eventDate = $ev->loadEventData($this->af->get('event_key'));
+        if (Ethna::isError($eventDate)) {
+            $this->ae->addObject('event_key_error', $eventDate);
             return 'reader_home';
         }
 
         //公開日前 or 公開終了後判定
-        $Viewingrights = $ev->isViewingPeriod($eventdate['event_start_day'], $eventdate['event_end_day']);
-        if (Ethna::isError($Viewingrights)) {
-            $this->ae->addObject('event_key_error', $Viewingrights);
+        $viewIngrights = $ev->isViewingPeriod($eventDate['event_start_day'], $eventDate['event_end_day']);
+        if (Ethna::isError($viewIngrights)) {
+            $this->ae->addObject('event_key_error', $viewIngrights);
             return 'reader_home';
         }
-        $this->af->setApp('eventdate', $eventdate);
+        $this->af->setApp('eventdate', $eventDate);
 
         //写真データ取得
         foreach (glob('uploads/' . $this->af->get('event_key') . '/*') as $file) {
             if (is_file($file)) {
-                $eventphoto[] = $file;
+                $eventPhoto[] = $file;
             }
         }
-        $this->af->setApp('event_photo', $eventphoto);
+        $this->af->setApp('event_photo', $eventPhoto);
 
         return null;
     }
