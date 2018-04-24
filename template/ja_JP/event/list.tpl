@@ -37,7 +37,7 @@
       <tr>
         <td><input type="submit" name="action_event_edit" value="編集"></td>
         <td><input type="submit" name="action_event_info" value="詳細"></td>
-        <tb><a class="button button-primary" href="/?action_event_infofirst=true&event_id={$i.event_id}">爆速詳細</a></tb>
+        <td><a class="button button-primary" href="/?action_event_infofirst=true&event_id={$i.event_id}">爆速詳細</a></td>
       </tr>
     </p>
   </table>
