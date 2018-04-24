@@ -63,11 +63,7 @@ class Yeahcheese_Form_EventEditDo extends Yeahcheese_ActionForm
         'required'      => true,
         'type'          => VAR_TYPE_DATETIME,
         ],
-<<<<<<< HEAD
-    'event_photo'       => [
-=======
     'event_photo' => [
->>>>>>> インデント修正
         'type'          => [VAR_TYPE_FILE],
         'name'          => '写真',
         'required'      => true,
