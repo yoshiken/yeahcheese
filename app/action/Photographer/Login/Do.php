@@ -7,17 +7,17 @@ class Yeahcheese_Form_PhotographerLoginDo extends Yeahcheese_ActionForm
 {
 
     public $form = [
-    'mailaddress' => [
-      'name'          => 'メールアドレス',
-      'required'      => true,
-      'custom'        => 'checkMailaddress',
-      'type'          => VAR_TYPE_STRING,
-      ],
-    'password' => [
-      'name'          => 'パスワード',
-      'required'      => true,
-      'type'          => VAR_TYPE_STRING,
-      ],
+           'mailaddress' => [
+               'name'          => 'メールアドレス',
+               'required'      => true,
+               'custom'        => 'checkMailaddress',
+               'type'          => VAR_TYPE_STRING,
+           ],
+           'password' => [
+               'name'          => 'パスワード',
+               'required'      => true,
+               'type'          => VAR_TYPE_STRING,
+           ],
     ];
 }
 

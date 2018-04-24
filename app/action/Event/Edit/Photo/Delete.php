@@ -6,11 +6,11 @@
 class Yeahcheese_Form_EventEditPhotoDelete extends Yeahcheese_ActionForm
 {
     public $form = [
-    'delphoto_url' => [
-        'name'          => '写真削除',
-        'required'      => true,
-        'type'          => [VAR_TYPE_STRING],
-        ],
+           'delphoto_url' => [
+               'name'          => '写真削除',
+               'required'      => true,
+               'type'          => [VAR_TYPE_STRING],
+           ],
     ];
 }
 

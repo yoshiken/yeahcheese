@@ -6,26 +6,26 @@
 class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
 {
     public $form = [
-      'event_name' => [
-        'name'          => 'イベント名',
-        'required'      => true,
-        'type'          => VAR_TYPE_STRING,
-        ],
-      'event_start_day' => [
-        'name'          => '公開開始日',
-        'required'      => true,
-        'type'          => VAR_TYPE_DATETIME,
-        ],
-      'event_end_day' => [
-        'name'          => '公開終了日',
-        'required'      => true,
-        'type'          => VAR_TYPE_DATETIME,
-        ],
-      'photo_tmp_path' => [
-        'name'          => 'tmppath',
-        'required'      => true,
-        'type'          => [VAR_TYPE_STRING],
-        ],
+           'event_name' => [
+               'name'           => 'イベント名',
+               'required'       => true,
+               'type'           => VAR_TYPE_STRING,
+           ],
+           'event_start_day' => [
+               'name'           => '公開開始日',
+               'required'       => true,
+               'type'           => VAR_TYPE_DATETIME,
+           ],
+           'event_end_day' => [
+               'name'           => '公開終了日',
+               'required'       => true,
+               'type'           => VAR_TYPE_DATETIME,
+           ],
+           'photo_tmp_path' => [
+               'name'           => 'tmppath',
+               'required'       => true,
+               'type'           => [VAR_TYPE_STRING],
+           ],
     ];
 }
 
@@ -70,7 +70,7 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
 
         //uploads/tmpファイルからeventごとのフォルダに移動
         for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
-            rename($this->af->get('photo_tmp_path')[$i], $uploaddir.basename($this->af->get('photo_tmp_path')[$i]));
+            rename($this->af->get('photo_tmp_path')[$i], $uploaddir . basename($this->af->get('photo_tmp_path')[$i]));
         }
 
         return null;
