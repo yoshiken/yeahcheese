@@ -23,5 +23,6 @@
   <p>
     <input type="submit" name="action_event_create" value="編集">
     <input type="submit" name="action_event_create_do" value="作成">
+    <input type="submit" name="action_event_createprt_do" value="作成(prototype)">
   </p>
 </form>
