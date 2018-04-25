@@ -20,12 +20,11 @@
         <td>イベント終了日</td>
         <td>{$app.eventdate.event_end_day}</td>
     </tr>
-    <tr>
-    <tr>
-        <td>イベント写真</td>
-        {foreach from=$app.event_photo item=photo_url}
-        <td><img src={$photo_url} width="128" height="128"></li></td>
-        <td><input type="hidden" name="event_photo_url[]" value="{$photo_url}" readonly required></td>
-        {/foreach}
-    </tr>
 </table>
+<p>イベント写真</p>
+<tr>
+    {foreach from=$app.event_photo item=photo_url}
+    <td><img src={$photo_url} width="256" height="256"></li></td>
+    <td><input type="hidden" name="event_photo_url[]" value="{$photo_url}" readonly required></td>
+    {/foreach}
+</tr>

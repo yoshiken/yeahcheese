@@ -1,5 +1,3 @@
-<h2>event_create<h2>
-
 <form action="." method="post" enctype="multipart/form-data">
   <table border="0">
     <input type="hidden" name="MAX_FILE_SIZE" value="5242880">
@@ -17,7 +15,7 @@
     </tr>
     <tr>
       <td>写真(5MB/枚まで)</td>
-      <td><input type="file" name="event_photo[]" value="{$form.event_photo}" multiple required>{message name="event_photo"}</td>
+      <td><input type="file" name="event_photo[]" value="{$form.event_photo}" accept='image/jpeg' multiple required>{message name="event_photo"}</td>
     </tr>
   </table>
   <p>

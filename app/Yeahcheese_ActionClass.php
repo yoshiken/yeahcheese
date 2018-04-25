@@ -54,4 +54,3 @@ class Yeahcheese_ActionClass extends Ethna_ActionClass
     }
 }
 // }}}
-

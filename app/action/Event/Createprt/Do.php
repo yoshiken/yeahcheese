@@ -3,7 +3,7 @@
  *  Event/Create/do.php
  *  Action イベント作成画面から各種バリデーション・エラーチェック
  */
-class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
+class Yeahcheese_Form_EventCreateprtDo extends Yeahcheese_ActionForm
 {
     public $form = [
            'event_name' => [
@@ -29,7 +29,7 @@ class Yeahcheese_Form_EventCreateDo extends Yeahcheese_ActionForm
     ];
 }
 
-class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
+class Yeahcheese_Action_EventCreateprtDo extends Yeahcheese_ActionClass
 {
    /**
      * イベントキー(認証キー)作成
@@ -38,15 +38,10 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
      */
     public function createEventkey()
     {
-        $dk = true;
-        $ev = $this->backend->getManager('event');
-        while ($dk) {
-            $str = array_merge(range('0', '9'), range('A', 'Z'));
-            $r_str = null;
-            for ($i = 0; $i < 16; $i++) {
-                $r_str .= $str[rand(0, count($str) - 1)];
-            }
-            $dk = $ev->duplicationKey($r_str);
+        $str = array_merge(range('0', '9'), range('A', 'Z'));
+        $r_str = null;
+        for ($i = 0; $i < 16; $i++) {
+            $r_str .= $str[rand(0, count($str) - 1)];
         }
         return $r_str;
     }
@@ -72,10 +67,12 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
             $this->ae->addObject('dberror', $insertevent);
             return 'event_create';
         }
-
         //uploads/tmpファイルからeventごとのフォルダに移動
         for ($i=0; $i < count($this->af->get('photo_tmp_path')); $i++) {
-            rename($this->af->get('photo_tmp_path')[$i], $uploaddir . basename($this->af->get('photo_tmp_path')[$i]));
+            $tmppath = $this->af->get('photo_tmp_path')[$i];
+            $enc_data = base64_encode(file_get_contents($tmppath));
+            $upfilename = $uploaddir . basename($tmppath);
+            file_put_contents($upfilename, $enc_data);
         }
 
         return null;

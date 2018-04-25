@@ -64,10 +64,10 @@ class Yeahcheese_Action_CreatPhotographerDo extends Yeahcheese_ActionClass
         $record['photographer_mailaddress'] = $this->af->get('mailaddress');
         $record['photographer_pw'] = hash('sha256', $this->af->get('password'));
         $insertSQL = $db->AutoExecute($table, $record, 'INSERT');
-
+        $cu = $this->backend->getManager('user');
         $userid = $cu->loadId($this->af->get('mailaddress'));
         $sessionUserId = [
-            'id' =>  $userid['photographer_id']
+            'id' =>  $userid
         ];
         $this->session->set('userid', $sessionUserId);
 

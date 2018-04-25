@@ -39,8 +39,10 @@ class Yeahcheese_ViewClass extends Ethna_ViewClass
      */
     protected function _setDefault($renderer)
     {
+        if ($this->session->get('userid')['id']) {
+            $cu = $this->backend->getManager('user');
+            $this->af->setApp('usermaill', $cu->loadMailaddress($this->session->get('userid')['id']));
+        }
     }
-
 }
 // }}}
-
