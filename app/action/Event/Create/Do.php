@@ -38,10 +38,15 @@ class Yeahcheese_Action_EventCreateDo extends Yeahcheese_ActionClass
      */
     public function createEventkey()
     {
-        $str = array_merge(range('0', '9'), range('A', 'Z'));
-        $r_str = null;
-        for ($i = 0; $i < 16; $i++) {
-            $r_str .= $str[rand(0, count($str) - 1)];
+        $dk = true;
+        $ev = $this->backend->getManager('event');
+        while ($dk) {
+            $str = array_merge(range('0', '9'), range('A', 'Z'));
+            $r_str = null;
+            for ($i = 0; $i < 16; $i++) {
+                $r_str .= $str[rand(0, count($str) - 1)];
+            }
+            $dk = $ev->duplicationKey($r_str);
         }
         return $r_str;
     }

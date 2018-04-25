@@ -119,4 +119,21 @@ class Yeahcheese_EventManager extends Ethna_AppManager
         ? $dbresult
         : Ethna::raiseNotice('イベントが存在しません', E_EVENT_DONTHAVE) ;
     }
+    /**
+     * 既存の認証キーを検索
+     *
+     * @param string $eventkey
+     * @return mixed 正常時:true、異常時：null
+     */
+    public function duplicationKey(string $eventkey)
+    {
+        $sql = "
+            SELECT *
+              FROM event_info
+             WHERE event_key = ?
+        ";
+        return ($this->db->getRow($sql, $mailaddress))
+        ? true
+        : null ;
+    }
 }
